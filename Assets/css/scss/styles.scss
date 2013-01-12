@@ -1,0 +1,191 @@
+// VARIABLES 
+$primary: #2E8BFF;
+$link: #00b0da;
+$black: #222;
+$gray: #999;
+$white: #fff;
+$border: 1px solid #ddd;
+$margin: 10px;
+$pagemargin: 30px;
+
+// MIXINS
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius; /* Safari 3-4, iOS 1-3.2, Android ≤1.6 */
+	border-radius: $radius; /* Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+ */
+
+}
+
+// GENERAL
+body { margin-bottom: 40px; } 
+body, div, p, input, label {
+	font-size: 16px;
+	font-color: $black;
+	line-height: 1.3;
+	font-family: "proxima-nova", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,button {
+	font-family: "proxima-nova", sans-serif;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: 300;
+	margin-bottom: $margin*1.5;
+}
+
+h2 { 
+	font-size: 24px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: $margin;
+}
+
+header {
+	height: 100px;
+	background: $white url(../../Labs/img/kareolabs-logo.jpg) $pagemargin 15px no-repeat;
+}
+
+.subhead {
+	border-top: $border;
+	border-bottom: $border;
+	background-color: #FAF8F6;
+	margin-bottom: $margin*2;
+}
+
+.container {
+	margin: 0 $pagemargin;
+}
+
+.video {
+	float: right;
+	margin: $margin*2 $margin;
+}
+
+// Form Elements
+a {
+	text-decoration: none;
+	color: $link;
+	
+	&:hover {
+		color: lighten($link, 10);
+	}
+}
+
+a.button {
+    @include border-radius(20px);
+    border: $border;
+    color: $link;
+    height: 30px;
+    padding: 7px $margin*2;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: $margin;
+    
+    &:hover {
+	    color: lighten($link, 10);
+    }
+    
+    &.primary {
+    	border: 0;
+	    background-color: $primary;
+	    color: $white;
+	    
+	    &:hover {
+			background-color: lighten($primary, 10);
+	    }
+    }
+}
+
+.buttonrow { margin-top: $margin*3; }
+
+input { 
+      @include border-radius(3px);
+      border: $border;
+      color: $gray;
+      padding: $margin/2 $margin;
+      
+      &[type='radio'] {
+	      border: 2px solid #ddd;
+	      margin-right: $margin;
+      }
+}
+
+label { 
+	line-height: 2.5; 
+	
+	input[type='text'] { margin-left: $margin; }
+}
+
+
+// SPECIFIC PAGES
+
+// Login
+
+.container#login {
+    width: 360px;
+    margin: 150px auto;
+    text-align: center;
+    
+    form {
+	    margin: 30px auto;
+	    
+	    input { margin-bottom: $margin; width: 100%; }
+    }
+    
+    p { text-align: left; }
+}
+
+// Experiment
+
+.accountpractice-wrapper {
+/* 	text-align: right; */
+	float: right;
+	margin-right: $pagemargin;
+	margin-top: 40px; 
+	
+	.accountpractice {
+		float: left;
+		margin-left: 40px;
+		
+		.heading {
+			color: #aaa;
+			text-transform: uppercase;
+			font-size: 12px;
+		}
+		
+		.name { font-weight: 600; }
+	}
+}
+
+#experiment {
+	height: 100%;
+	overflow-y: hidden;
+
+	.subhead {
+		padding: $margin 0;
+	}
+
+	h1 { 
+		display: inline; 
+	}
+
+	.ratings {
+		float: right;
+/* 		margin-top: 10px; */
+		
+		color: #999;
+		
+		strong { color: $black; }
+	}
+	
+	iframe {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
