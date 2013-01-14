@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,9 +9,13 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="../Assets/css/normalize.css">
-        <link rel="stylesheet" href="../Assets/css/main.css">
-        <link rel="stylesheet" href="../Assets/css/styles.css">
+        <link rel="stylesheet/less" type="text/css" href="labs.bootstrap.less" />
+        <script type="text/javascript">
+		    less = {
+		        env: "development"
+		    };
+		</script>
+        <script type="text/javascript" src="../Assets/js/less-1.3.3.min.js"></script>
         
         <!-- Typekit -->
         <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>
