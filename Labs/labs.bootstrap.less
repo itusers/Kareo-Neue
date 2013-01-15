@@ -64,7 +64,30 @@
 
 // Modifications below
 
+// VARIABLES 
+@primary: #2E8BFF;
+@link: #00b0da;
+@black: #222;
+@gray: #999;
+@white: #fff;
+@border: 1px solid #ddd;
+@margin: 10px;
+@pagemargin: 20px;
+
 // MIXINS / TEMPLATE CLASSES
+
+@font-face {
+	font-family: 'Entypo';
+	src: url('../Assets/fonts/entypo.eot?#iefix') format('embedded-opentype'), 
+	     url('../Assets/fonts/entypo.woff') format('woff'), 
+	     url('../Assets/fonts/entypo.ttf')  format('truetype'),
+	     url('../Assets/fonts/entypo.svg#svgEntypo') format('svg');
+}
+
+.entypo { 
+	font-family: 'Entypo'; 
+	font-size: 30px;
+}
 
 // nullify Bootstrap's gradients and shadows
 .flatten(@color) {
@@ -93,18 +116,8 @@
     }
 }
 
-// VARIABLES 
-@primary: #2E8BFF;
-@link: #00b0da;
-@black: #222;
-@gray: #999;
-@white: #fff;
-@border: 1px solid #ddd;
-@margin: 10px;
-@pagemargin: 20px;
-
 // GENERAL
-body { margin-bottom: 40px; } 
+/* body { margin-bottom: 40px; }  */
 body, div, p, input, label {
 	font-size: 16px;
 	font-color: @black;
@@ -149,6 +162,7 @@ header {
 a {
 	text-decoration: none;
 	color: @link;
+	outline: 0;
 	
 	&:hover {
 		color: lighten(@link, 10);
@@ -181,13 +195,15 @@ a {
 	    .box-shadow(none);
     }
     
+    &.entypo { font-size: 30px; }
+    
 }
 
 .btn-primary { .buttonify(@primary); }
 .btn-success { .buttonify(#249718); }
 .btn-danger { .buttonify(#EE604D); }
 
-.buttonrow { margin-top: @margin*2; }
+.buttonrow { margin-top: @margin*2; margin-bottom: @margin*2; }
 
 input { 
 
@@ -208,6 +224,44 @@ label {
 		margin-left: @margin; 
 		margin-bottom: 0;
 	}
+}
+
+// Modal
+
+.modalpadding {
+	padding: 10px 40px;
+}
+
+.modal {
+	.border-radius(3px);
+}
+	
+.modal-header {
+	border-bottom: none;
+	.border-radius(3px 3px 0 0);
+	background-color: @white;	
+	.modalpadding;
+	padding-bottom: 0;
+	
+	h1 { margin-top: @margin; margin-bottom: 0;}
+	
+	.close { font-size: 60px; font-weight: normal; margin-top: 20px; }
+}
+
+.modal-body { 
+	.modalpadding; 
+	
+	.video { margin-bottom: @margin; }
+}
+
+.modal-footer {
+	border-top: none;
+	.border-radius(0 0 3px 3px);
+	background-color: @black;
+	.modalpadding;
+	padding-bottom: @margin*2;
+	
+	.alertband { text-align: left; }
 }
 
 
@@ -232,6 +286,7 @@ label {
 	
 .accountpractice {
 	margin-top: 40px;
+	text-align: right;
 	
 	.heading {
 		color: #aaa;
@@ -244,11 +299,18 @@ label {
 
 
 #experiment {
-	height: 100%;
-	overflow-y: hidden;
-
 	.subhead {
 		padding: @margin 0;
+		margin-bottom: 0;
+		
+		a {
+			&:hover { text-decoration: none; }
+			
+				.entypo { 
+					position: relative;
+					top: 3px;			
+				}
+		}
 		
 	}
 
@@ -256,16 +318,31 @@ label {
 		display: inline; 
 	}
 
-	strong { color: @black; }
-
-	.blurb { color: #999; font-size: 14px; text-align: right; }
+	.blurb { 
+		color: #999; font-size: 14px; text-align: right; 
+	
+		strong { color: @black; }
+	
+	}
 	
 	.buttons { text-align: right; margin-top: 4px; }
+	.btn-danger { margin-right: 0; }
 	
-	iframe {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+}
+
+.alertband {
+	background-color: @black;
+	color: @white;
+	text-align: center;
+	padding: @margin/2 0;
+	
+	strong { color: @white; }
+}
+
+#iframe {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 

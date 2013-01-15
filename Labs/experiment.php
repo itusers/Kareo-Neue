@@ -1,5 +1,5 @@
 <?php 
-$title = 'Experiment';
+$title = 'A/R Reports';
 require('_header.php'); 
 ?>
 
@@ -27,7 +27,7 @@ require('_header.php');
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span6">
-					<h1>A/R Reports</h1> <a class="whatisthis" href="#">What is this about?</a>
+					<h1><?php echo $title; ?></h1> <a class="whatisthis" href="#modal" role="button" data-toggle="modal"><span class="entypo">&#59140;</span> What is this about?</a>
 				</div>
 				
 
@@ -36,8 +36,8 @@ require('_header.php');
 						<br />You can explain why in the next screen
 					</div>
 					<div class="buttons span2">
-						<a class="btn btn-success" href="#">Yay</a>
-						<a class="btn btn-danger" href="#">Nay</a>
+						<a class="btn btn-success entypo" href="#">&#128077;</a>
+						<a class="btn btn-danger entypo" href="#">&#128078;</a>
 					</div>
 
 
@@ -45,7 +45,27 @@ require('_header.php');
 		</div> <!-- /.container-fluid -->
 	</div> <!-- /.subhead -->
 	
-	<iframe src="http://cnn.com"></iframe>
+	<div class="alertband">
+		You are using <strong>REAL</strong> data
+	</div> <!-- /.alertband -->
+	
+</div> <!-- /#experiment -->
+
+<iframe id="iframe" src="http://cnn.com"></iframe>
+
+<div id="modal" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close entypo" data-dismiss="modal" aria-hidden="true">&#10060;</button>
+		<h1><?php echo $title; ?></h1>
+	</div>
+	<div class="modal-body">
+		<div class="video"><img src="http://placehold.it/480x320"></div>
+		<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. </p>
+	</div>
+	<div class="modal-footer">
+		<div class="alertband">Just a reminder, you are using <strong>REAL</strong> data!</div>
+		<a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+	</div>
 </div>
     
 <?php require('_footer.php'); ?>
