@@ -1,5 +1,5 @@
 <?php 
-	$devmode = 0; 
+	$devmode = 0; // for production, set $devmode to '0'
 ?>
 
 <!DOCTYPE html>

@@ -8,14 +8,17 @@ require('_header.php');
 		<div class="container-fluid">
 			<div class="row-fluid">
 
-				<div class="accountpractice span4 offset5">
-					<div class="heading">Account</div>
-					<div class="name">American Medical Association</div>
-				</div>
-				
-				<div class="accountpractice span3">
-					<div class="heading">Practice</div>
-					<div class="name">Dr. Jane's Office</div>
+				<div class="span6 offset6">
+					<div class="accountpractice">
+						<div class="heading">Practice</div>
+						<div class="name">Dr. Jane's Office</div>
+					</div>
+
+					<div class="accountpractice">
+						<div class="heading">Account</div>
+						<div class="name">American Medical Association</div>
+					</div>					
+
 				</div>
 				
 			</div>
@@ -30,16 +33,16 @@ require('_header.php');
 					<h1><?php echo $title; ?></h1> <a class="whatisthis" href="#modal" role="button" data-toggle="modal"><span class="entypo">&#59140;</span> What is this about?</a>
 				</div>
 				
-
-					<div class="blurb span4">
-						<strong>What do you think of this design?</strong>
-						<br />You can explain why in the next screen
-					</div>
-					<div class="buttons span2">
+				<div class="span6">
+					<div class="buttons">
 						<a class="btn btn-success entypo" href="#">&#128077;</a>
 						<a class="btn btn-danger entypo" href="#">&#128078;</a>
 					</div>
-
+					<div class="blurb">
+						<strong>What do you think of this design?</strong>
+						<br />You can explain why in the next screen
+					</div>
+				</div>
 
 			</div>
 		</div> <!-- /.container-fluid -->

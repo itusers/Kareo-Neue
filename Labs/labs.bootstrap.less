@@ -285,8 +285,9 @@ label {
 // Experiment
 	
 .accountpractice {
-	margin-top: 40px;
+	margin: 40px 0 0 40px;
 	text-align: right;
+	float: right;
 	
 	.heading {
 		color: #aaa;
@@ -317,15 +318,21 @@ label {
 	h1 { 
 		display: inline; 
 	}
+	
+	.blurb, .buttons { float: right; }
 
 	.blurb { 
-		color: #999; font-size: 14px; text-align: right; 
+		color: #999; 
+		font-size: 14px; 
+		line-height: 1.1; 
+		text-align: right; 
+		margin-top: 4px;
 	
 		strong { color: @black; }
 	
 	}
 	
-	.buttons { text-align: right; margin-top: 4px; }
+	.buttons { text-align: right; margin-top: 4px; margin-left: @margin; }
 	.btn-danger { margin-right: 0; }
 	
 }
