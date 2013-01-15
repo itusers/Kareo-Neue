@@ -1,3 +1,7 @@
+<?php 
+	$devmode = 0; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,6 +13,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        
+        <?php if ($devmode) { ?>
         <link rel="stylesheet/less" type="text/css" href="labs.bootstrap.less" />
         <script type="text/javascript" src="../Assets/js/less-1.3.3.min.js"></script>
         
@@ -16,6 +22,10 @@
 		    less.env = "development";
 		    less.watch();
 		</script>
+
+        <?php } else { ?>
+        <link rel="stylesheet" href="labs.bootstrap.css" type="text/css" charset="utf-8">
+        <?php } ?>
         
         <!-- Typekit -->
         <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>
