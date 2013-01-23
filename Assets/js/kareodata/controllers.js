@@ -1,10 +1,47 @@
-// Created by Abe Yang 1/18/2013
-// based off of http://docs.angularjs.org/tutorial/step_02
-// make life easier by using http://www.jsoneditoronline.org/
+/*	
+Created by Abe Yang 1/18/2013
+resources: 
+	+ http://docs.angularjs.org/tutorial/step_02
+	+ http://jsfiddle.net/colvint/tyx3m/
+	+ services vs factory: http://jacobmumm.com/2012/08/28/angular-js-services/
+*/
 
-function ContactListCtrl($scope) {
-	$scope.contacts = [
-	    {
+var app = angular.module('app', []);
+
+// CONTROLLERS
+
+app.controller('contactListController', function($scope, contactResource) {
+	
+	$scope.contacts = contactResource.list();
+	
+	$scope.getFullName = function(contact) {
+		return contact.first + ' ' + contact.last;
+	}
+
+}); // end contactListController
+
+app.controller('providerListController', function($scope, contactResource, providerResource) {
+	
+	$scope.providers = providerResource.list();
+	
+	$scope.getName = function(provider) {
+		var contact = contactResource.findById(provider.id);
+		var name = contact.first + ' ' + contact.last;
+		if (provider.suffix) name += ', ' + provider.suffix;
+		return name;
+	}
+
+}); // end providerListController
+
+// RESOURCES
+
+app.factory('contactResource', function () {
+
+	// make life easier by using http://www.jsoneditoronline.org/
+
+	var data = [
+		{
+	    	"id": 1,
 	        "first": "Abe",
 	        "last": "Yang",
 	        "email": "abe.yang@kareo.com",
@@ -17,6 +54,7 @@ function ContactListCtrl($scope) {
 	        "ssn": "555-55-5555"
 	    },
 	    {
+	        "id": 2,
 	        "first": "Mitch",
 	        "last": "Malone",
 	        "email": "mitch.malone@kareo.com",
@@ -29,6 +67,7 @@ function ContactListCtrl($scope) {
 	        "ssn": "321-54-0987"
 	    },
 	    {
+	        "id": 3,
 	        "first": "Peter",
 	        "last": "Venkman",
 	        "email": "pvenkman@gmail.com",
@@ -39,6 +78,66 @@ function ContactListCtrl($scope) {
 	        "zip": 92617,
 	        "dob": "1964-05-21",
 	        "ssn": "154-098-1237"
+	    },
+	    {
+	        "id": 4,
+	        "first": "Jason",
+	        "last": "Leu",
+	        "email": "jason.leu@kareo.com",
+	        "phone": "123-456-7890",
+	        "address": "2 Irvine Spectrum",
+	        "city": "Irvine",
+	        "state": "CA",
+	        "zip": 92617,
+	        "dob": "1978-12-21",
+	        "ssn": "398-256-5137"
 	    }
 	];
-}
+	
+	return {
+		list: function() {
+			return data;
+		},
+		findById: function(id) {
+            return _.find(data, function (contact) {
+                return contact.id == id;
+            });
+        }
+	}
+});
+
+app.factory('providerResource', function () {
+
+	var data = [
+		{
+	    	"id": 1,
+	        "suffix": "Ph.D.",
+	        "npi": "123456789",
+	        "taxonomy": "1234 - Physician"
+	    },
+	    {
+	        "id": 2,
+	        "suffix": "M.D.",
+	        "npi": "907856342",
+	        "taxonomy": "5310 - Doctor"
+	    },
+	    {
+	        "id": 3,
+	        "suffix": "M.D.",
+	        "npi": "718293045",
+	        "taxonomy": "1234 - Physician"
+	    },
+	    {
+	        "id": 4,
+	        "suffix": "",
+	        "npi": "403928176",
+	        "taxonomy": "2167 - Surgeon"
+	    }
+	];
+	
+	return {
+		list: function() {
+			return data;
+		}
+	}
+});
