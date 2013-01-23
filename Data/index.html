@@ -79,10 +79,19 @@
 		        		<td>{{ getName(provider) }}</td>
 		        		<td>{{ provider.npi }}</td>
 		        		<td>{{ provider.taxonomy }}</td>
-		        		<td><label for=""></label><input id="" type="checkbox" name="" value="" />
+		        		<!-- manipulating checkboxes: http://jsfiddle.net/tRxzr/1/ -->
+		        		<td><input type="checkbox" ng-model="provider.checked" /></td>
 		        	</tr>
 		        </tbody>
 	        </table>
+	        
+	        <p><input type="checkbox" ng-disabled="getSelected().length == 0" ng-model="finalcheck"/> I understand that I will be billed for 
+	        <strong><ng-pluralize count="getSelected().length" 
+	        	when="{'1': '{} provider',
+	        			'other': '{} providers'}">
+	        </ng-pluralize></strong>.</p>
+	        
+	        <p><button class="primary-btn btn" ng-disabled="!finalcheck">Next Step</button>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

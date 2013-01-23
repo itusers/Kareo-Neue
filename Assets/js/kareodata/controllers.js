@@ -6,6 +6,9 @@ resources:
 	+ services vs factory: http://jacobmumm.com/2012/08/28/angular-js-services/
 */
 
+// http://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it
+'use strict';
+
 var app = angular.module('app', []);
 
 // CONTROLLERS
@@ -29,6 +32,16 @@ app.controller('providerListController', function($scope, contactResource, provi
 		var name = contact.first + ' ' + contact.last;
 		if (provider.suffix) name += ', ' + provider.suffix;
 		return name;
+	}
+	
+	$scope.getSelected = function() {
+		// get list of checked providers
+		var list = _.filter($scope.providers, function($p) {
+			return ($p.checked == true);
+		});
+		
+/* 		return _.each(list, $scope.getName); */
+		return list;
 	}
 
 }); // end providerListController
