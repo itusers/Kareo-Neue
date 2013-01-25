@@ -37,7 +37,7 @@ app.controller('providerListController', function($scope, contactResource, provi
 	$scope.getSelected = function() {
 		// get list of checked providers
 		var list = _.filter($scope.providers, function($p) {
-			return ($p.checked == true);
+			return ($p.checked == 'highlightForActive');
 		});
 		
 /* 		return _.each(list, $scope.getName); */
