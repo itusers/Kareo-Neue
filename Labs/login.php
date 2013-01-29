@@ -10,7 +10,10 @@ require('_header.php');
 			        <form>
 			            <input type="text" id="username" name="username" placeholder="Login or email"/>
 			            <input type="password" id="password" name="password" placeholder="Password"/>
-			            <div class="buttonrow"><a class="btn btn-primary" href="template.php">Sign in</a></div>
+			            <div class="buttonrow">
+			            	<input type="submit" value="Sign in" class="btn btn-primary login" />
+<!-- 			            	<a class="btn btn-primary" href="template.php">Sign in</a> -->
+			            </div>
 			        </form>
 			        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 			    </div> <!-- /.span4 -->
