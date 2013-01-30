@@ -154,3 +154,35 @@ app.factory('providerResource', function () {
 		}
 	}
 });
+
+app.factory('practiceResource', function () {
+
+	var data = [
+		{
+	    	"id": 1,
+	        "name": "American Medical Associates"
+	    },
+	    {
+	        "id": 2,
+	        "name": "Cardiovascular Practitioners"
+	    },
+	    {
+	        "id": 3,
+	        "name": "Physicians' Guild"
+	    },
+	    {
+	        "id": 4,
+	        "name": "Taiwanese Medicine"
+	    },
+	    {
+	        "id": 6,
+	        "name": "Under the C Section"
+	    }
+	];
+	
+	return {
+		list: function() {
+			return data;
+		}
+	}
+});
