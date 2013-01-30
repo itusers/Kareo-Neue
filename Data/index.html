@@ -25,7 +25,7 @@
         <!-- Typekit -->
         <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+        
 
     </head>
     <body>
@@ -33,6 +33,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- Contacts -->
         <div class="container" ng-controller="contactListController">
 <!--
         	<ul class="nav nav-tabs" ng-include="'nav.html'">
@@ -61,6 +62,7 @@
 	        </table>
         </div>
         
+        <!-- Providers -->
         <div class="container" ng-controller="providerListController">
 
         	<h1>Potential Providers</h1>
@@ -91,6 +93,32 @@
 	        			'other': '{} providers'}">
 	        </ng-pluralize></strong> (please <a href="http://www.kareo.com/pricing">view Kareo's billing policy</a> for details).</p>
 	        
+	        <p><button class="btn btn-primary" ng-disabled="!finalcheck">Next Step</button>
+        </div>
+        
+        <!-- User's Practice/Provider -->
+        <div class="container" ng-controller="providerListController">
+
+        	<h1>What practices and providers can Mike Su access?</h1>
+        	
+	        <table class="table">
+		        <tbody>
+		        	<tr ng-repeat="practice in practices">
+		        		<td><input type="checkbox" ng-model="practice.checked" ng-true-value="highlightForActive" /></td>
+		        		<td>{{ practice.name }}</td>
+		        		<!-- select dropdown: 
+		        				+ http://www.anicehumble.com/2012/08/angularjs-dropdown-list.html
+		        				+ http://docs.angularjs.org/api/ng.directive:select 
+		        		-->
+		        		<td><select ng-model="p" ng-show="practice.checked" ng-options="getName(provider) for provider in providers">
+			        		<option value="">Choose a provider (optional)</option>
+		        		</select></td>
+		        	</tr>
+		        </tbody>
+	        </table>
+	        
+	        <p>{{ practices }}</p>
+	        	        
 	        <p><button class="btn btn-primary" ng-disabled="!finalcheck">Next Step</button>
         </div>
         

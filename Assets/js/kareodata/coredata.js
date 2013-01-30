@@ -23,9 +23,10 @@ app.controller('contactListController', function($scope, contactResource) {
 
 }); // end contactListController
 
-app.controller('providerListController', function($scope, contactResource, providerResource) {
+app.controller('providerListController', function($scope, contactResource, providerResource, practiceResource) {
 	
 	$scope.providers = providerResource.list();
+	$scope.p = 0;		// model
 	
 	$scope.getName = function(provider) {
 		var contact = contactResource.findById(provider.id);
@@ -43,8 +44,12 @@ app.controller('providerListController', function($scope, contactResource, provi
 /* 		return _.each(list, $scope.getName); */
 		return list;
 	}
+	
+		$scope.practices = practiceResource.list();
+
 
 }); // end providerListController
+
 
 // RESOURCES
 
