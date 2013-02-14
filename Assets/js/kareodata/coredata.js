@@ -28,6 +28,9 @@ app.controller('providerListController', function($scope, contactResource, provi
 	$scope.providers = providerResource.list();
 	$scope.p = 0;		// model
 	
+	$scope.thisuser = 'Mike Su';
+	$scope.firstrow = 'highlightForActive';
+	
 	$scope.getName = function(provider) {
 		var contact = contactResource.findById(provider.id);
 		var name = contact.first + ' ' + contact.last;
@@ -165,23 +168,52 @@ app.factory('practiceResource', function () {
 	var data = [
 		{
 	    	"id": 1,
-	        "name": "American Medical Associates"
+	        "name": "American Medical Associates",
+	        "address": "5200 Chicago Ave, Apt F12",
+	        "city": "Riverside",
+	        "state": "CA",
+	        "zip": 92507
+
 	    },
 	    {
 	        "id": 2,
-	        "name": "Cardiovascular Practitioners"
+	        "name": "Cardiovascular Practitioners",
+	        "address": "123 Fake St",
+	        "city": "Irvine",
+	        "state": "CA",
+	        "zip": 92617
 	    },
 	    {
 	        "id": 3,
-	        "name": "Physicians' Guild"
+	        "name": "Physicians' Guild",
+	        "address": "345 East Ohio Street",
+	        "city": "Chicago",
+	        "state": "IL",
+	        "zip": 60611
 	    },
 	    {
 	        "id": 4,
-	        "name": "Taiwanese Medicine"
+	        "name": "Taiwanese Medicine",
+	        "address": "9090 Winlock Rd",
+	        "city": "Torrance",
+	        "state": "CA",
+	        "zip": 90505
+	    },
+	    {
+	        "id": 5,
+	        "name": "The Really, Really Long Name that Takes Up a lot of Space",
+	        "address": "54321 Long Address, P.O. Box 12345",
+	        "city": "Torrance",
+	        "state": "CA",
+	        "zip": 90505
 	    },
 	    {
 	        "id": 6,
-	        "name": "Under the C Section"
+	        "name": "Under the C Section",
+	        "address": "2440 Dana St",
+	        "city": "Berkeley",
+	        "state": "CA",
+	        "zip": 94704
 	    }
 	];
 	
