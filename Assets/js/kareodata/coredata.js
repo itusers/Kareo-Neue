@@ -112,6 +112,19 @@ app.factory('contactResource', function () {
 	        "zip": 92617,
 	        "dob": "1978-12-21",
 	        "ssn": "398-256-5137"
+	    },
+	    {
+	        "id": 5,
+	        "first": "Joe",
+	        "last": "Ayoob",
+	        "email": "ayoob@thenewb.com",
+	        "phone": "123-456-7890",
+	        "address": "1000 Hackamore Pl",
+	        "city": "Riverside",
+	        "state": "CA",
+	        "zip": 92507,
+	        "dob": "1986-5-20",
+	        "ssn": "256-513-7123"
 	    }
 	];
 	
