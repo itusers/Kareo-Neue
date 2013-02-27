@@ -24,6 +24,7 @@ app.controller('lifecycleController', function($scope, contactResource, provider
 		
 	$scope.encounter = encountersResource.findById($scope.eid); 
 	$scope.claims = claimsResource.filterByEid($scope.eid);
+	$scope.totalAmount = claimsResource.totalByEid($scope.eid);
 
 }); // end providerListController
 
@@ -79,7 +80,8 @@ app.factory('claimsResource', function () {
 	        "code": "720.4",
 	        "desc": "Debridement, extensive eczematous/infectious skin diseases",
 	        "date": "2013-01-13",
-	        "amount": "$500.00"
+	        "status": "paid",
+	        "amount": 500
 	    },
 	    {
 			"id": 2,
@@ -87,7 +89,8 @@ app.factory('claimsResource', function () {
 	        "code": "801.50",
 	        "desc": "Cerebral perfusion analysis, CT w/contrasting slides",
 	        "date": "2013-01-13",
-	        "amount": "$256.00"
+	        "status": "paid",
+	        "amount": 256
 	    },
 	    {
 			"id": 3,
@@ -95,7 +98,8 @@ app.factory('claimsResource', function () {
 	        "code": "360.0",
 	        "desc": "Full body scan, determ cerebral blood flow, scan in the arm",
 	        "date": "2013-01-14",
-	        "amount": "$312.00"
+	        "status": "denied",
+	        "amount": 312
 	    },
 	    {
 			"id": 4,
@@ -103,7 +107,8 @@ app.factory('claimsResource', function () {
 	        "code": "18.2",
 	        "desc": "Extensive eczematous/infected skin; past the epidermis",
 	        "date": "2013-01-14",
-	        "amount": "$56.00"
+	        "status": "paid",
+	        "amount": 56
 	    },
 	    {
 			"id": 5,
@@ -111,7 +116,8 @@ app.factory('claimsResource', function () {
 	        "code": "20.8",
 	        "desc": "Most disgusting thing you've ever seen",
 	        "date": "2013-02-23",
-	        "amount": "$223.50"
+	        "status": "waiting",
+	        "amount": 223.50
 	    }
 	];
 	
@@ -123,6 +129,11 @@ app.factory('claimsResource', function () {
             return _.filter(data, function (claim) {
                 return claim.eid == eid;
             });
+        },
+        totalByEid: function(eid) {
+	        var filteredlist = this.filterByEid(eid);
+	        var amounts = _.pluck(filteredlist, 'amount');
+	        return _.reduce(amounts, function(memo, num){ return memo + num; }, 0);
         }
 	}
 });
