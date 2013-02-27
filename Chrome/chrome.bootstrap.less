@@ -200,6 +200,7 @@ a {
 	&:hover {
 		border-color: darken(@link, 7);
 		color: darken(@link, 7);
+		background-color: transparent;
 	}
 }
 .btn-success { .buttonify(#249718); }
@@ -289,8 +290,11 @@ label {
 	top: 2px;
 }
 
-#nav, header, #subnav, #content {
-	position: absolute;
+#nav, header, #subnav {
+	position: fixed;
+}
+#nav, #subnav {
+	overflow-y: scroll;
 }
 
 // Navigation
@@ -328,7 +332,7 @@ label {
 
 header {
 	height: @header-height - 30;	// take padding into account
-	width: @header-width - 40;		// take padding into account
+/* 	width: @header-width - 40;		// take padding into account */
 	top: 0;
 	left: @nav-width;
 	right: 0;
@@ -336,6 +340,7 @@ header {
 	border-bottom: @border;
 	border-right: @border;
 	z-index: 10;
+	background: #fff;
 }
 
 // Sub-nav
@@ -377,32 +382,29 @@ header {
 // Content
 
 #content {
+	position: absolute;
 	top: @header-height;
 	left: @nav-width + @subnav-width;
 	right: 0;
 	bottom: 0;
-//	min-width: 760px;
-	width: 760px;
+	min-width: 500px;
+/* 	width: 760px; */
 	border-right: @border;
-	overflow-y: scroll;
+/* 	overflow-y: scroll; */
 		
 	.enc_container {
 //		min-width: 520px;
-		width: 520px;
+/* 		width: 520px; */
 		position: absolute;
 		left: 0;
-		right: 240px;		
+/* 		right: 240px;		 */
+		right: 0;
 	}
 	
 	.enc_item {
 		padding: 20px;		
 		border-bottom: @border;
 		.clearfix;
-		
-		.col {
-			float: left;
-			width: 50%;
-		}
 		
 		label { 
 			font-size: 16px;
@@ -448,21 +450,15 @@ header {
 	.claim {
 		padding: @margin 0;
 		border-bottom: @border;
-		.clearfix;
 		
 		.amount {
-			float: right;
-			width: 20%;
 			font-size: 21px;
 			text-align: right;
 			padding-top: 7px;
 		}
 		
 		.info {
-			float: left;
-			width: 80%;
-			
-//			div { font-size: 14px; }
+
 		}
 		
 		.desc {

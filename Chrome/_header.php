@@ -30,6 +30,8 @@
         <!-- Angular and Kareo data files -->
 		<script src="../Assets/js/underscore-min.js"></script>
 		<script src="../Assets/js/angular.min.js"></script>
+		<script src="../Assets/js/bootstrap-gh-pages/ui-bootstrap-tpls-0.1.0.min.js"></script>
+		
 		<script src="../Assets/js/kareodata/coredata.js"></script>
 		<script src="../Assets/js/kareodata/lifecycle.js"></script>
         
