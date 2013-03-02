@@ -1,5 +1,7 @@
 <?php 
 	$devmode = 1; // for production, set $devmode to '0'
+/* 	$cssprefix = 'chrome'; */
+	$cssprefix = 'rcm';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
 
         
         <?php if ($devmode) { ?>
-        <link rel="stylesheet/less" type="text/css" href="chrome.bootstrap.less" />
+        <link rel="stylesheet/less" type="text/css" href="<?php echo $cssprefix; ?>.bootstrap.less" />
         <script type="text/javascript" src="../Assets/js/less-1.3.3.min.js"></script>
         
         <script type="text/javascript">
@@ -24,7 +26,7 @@
 		</script>
 
         <?php } else { ?>
-        <link rel="stylesheet" href="chrome.bootstrap.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="<?php echo $cssprefix; ?>.bootstrap.css" type="text/css" charset="utf-8">
         <?php } ?>
         
         <!-- Angular and Kareo data files -->
@@ -33,7 +35,8 @@
 		<script src="../Assets/js/bootstrap-gh-pages/ui-bootstrap-tpls-0.1.0.min.js"></script>
 		
 		<script src="../Assets/js/kareodata/coredata.js"></script>
-		<script src="../Assets/js/kareodata/lifecycle.js"></script>
+<!-- 		<script src="../Assets/js/kareodata/lifecycle.js"></script> -->
+		<script src="../Assets/js/kareodata/rcm.js"></script>
         
         <!-- Typekit -->
         <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>

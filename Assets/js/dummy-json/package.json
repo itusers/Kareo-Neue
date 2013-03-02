@@ -1,0 +1,11 @@
+{
+  "name": "dummy-json",
+  "version": "0.0.1",
+  "description": "Random JS objects generator",
+  "author": "Nikita Zhenev <nikita@andcreative.ru>",
+  "dependencies": {
+      "underscore": ">= 1.2.1"
+  },
+  "repository"    : {"type": "git", "url": "git://github.com/nzhenev/dummy-json.git"},
+  "main": "index.js"
+}
