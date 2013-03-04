@@ -14,7 +14,7 @@ var arr = [];
 
 // --Master config variables--
 
-var max_e = 50;			// max # of encounters
+var max_e = 50;		// max # of encounters
 var max_amount = 4000;	// max # dollar amount
 var max_b = 10;			// max # of billers
 var max_c = 35;			// max # of contacts/patients
@@ -33,7 +33,9 @@ for(var i=1; i<=max_e; i++) {
 		bid: "$int(1, max_b-1)",
 		cid: "$int(1, max_c-1)",
 		amount: "$int(max_amount)",
-		date_created: "$date",
+		amount_paid: "$int($.amount)",
+		date_appointment: "$date",
+		date_created: "$dateGreaterThan($.date_appointment)",
 		date_updated: "$dateGreaterThan($.date_created)",
 		comments: "$int(5)",
 		status: "$int(10)"

@@ -117,17 +117,31 @@ app.factory('practiceResource', function () {
 	return {
 		list: function() {
 			return data;
-		}
+		},
+		findById: function(id) {
+            return _.find(data, function (p) {
+                return p.id == id;
+            });
+        }
 	}
 });
 
 app.factory('accountResource', function () {
 
-	var data = [{"id":1,"company":"Westtomik","name":"Westtomik Account"},{"id":2,"company":"Generola","name":"Generola Account"},{"id":3,"company":"Textiqua","name":"Textiqua Account"},{"id":4,"company":"Ventanium","name":"Ventanium Account"},{"id":5,"company":"Quintegrity","name":"Quintegrity Account"}];
+	var data = [{"id":1,"name":"Davenport Medical Clinic, LLC"},
+	{"id":2,"name":"Paul C. Pearson, DPM, PA"},
+	{"id":3,"name":"TotalLifeMD"},
+	{"id":4,"name":"Robert Osheroff, DPM"},
+	{"id":5,"name":"Grace Szenkiel, MD"}];
 	
 	return {
 		list: function() {
 			return data;
-		}
+		},
+		findById: function(id) {
+            return _.find(data, function (a) {
+                return a.id == id;
+            });
+        }
 	}
 });

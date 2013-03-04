@@ -70,6 +70,7 @@
 @black: #222;
 @gray: #999;
 @lightgray: #bbb;
+@lightergray: #eee;
 @white: #fff;
 @border: 1px solid #e8e8e8;
 @margin: 10px;
@@ -160,6 +161,18 @@ a {
 		font-size: 14px;
 		margin-left: 10px;
 	}
+}
+
+.container {
+	&.full {
+		margin-top: @margin;
+		margin-bottom: @margin;
+	}
+}
+
+.subtext {
+	color: @gray;
+	font-size: 14px;
 }
 
 // Form Elements
@@ -271,9 +284,70 @@ label {
 
 // Temp
 
-.card { 
-	border: @border;
-	.border-radius(5px);
-	padding: @margin;
-	margin-bottom: @margin;
+.sidebar {
+	background: @lightergray;
+	height: 500px;
+}
+
+.main {
+
+	.avatar {
+		padding-top: @margin;
+		
+		img, div {
+			max-width: 36px;
+			.border-radius(20px);
+			float: right;
+		}
+		
+		div {
+			text-align: center;
+			padding: 7px 0;
+			width: 36px;
+			background: @lightergray;
+		}
+	}
+
+	.card { 
+		border: @border;
+		.border-radius(3px);
+		margin-bottom: @margin/2;
+		.clearfix;
+	
+		.amount {
+			float: right;
+			text-align: right;
+			padding: @margin;
+		}
+		
+		.status {
+			float: left;
+			height: 100%;
+			width: 36px;
+			font-size: 36px;
+			text-align: center;
+			.border-radius(3px 0 0 3px);
+			padding: 8px 0;
+			background: @lightergray;
+			color: @white;
+			
+			&.pending {
+				background: #f7a600;
+			}
+			
+			&.rejected {
+				background: #ff3c37;
+			}
+			
+			&.success {
+				background: #3dcc00;
+			}
+		}
+		
+		.content { 
+			float: left; 
+			padding: @margin;
+		}
+	}
+
 }
