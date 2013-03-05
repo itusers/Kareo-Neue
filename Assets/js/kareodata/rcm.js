@@ -17,7 +17,9 @@ Should be used inconjunction with coredata.js
 
 /* RCM controller */
 
-app.controller('rcmController', function($scope, contactResource, practiceResource, accountResource, encountersResource, billersResource) {
+app.controller('EncountersController', function($scope, contactResource, practiceResource, accountResource, encountersResource, billersResource) {
+
+	$scope.active_encounters = 'active';			// highlight navbar
 	
 	$scope.encounters = encountersResource.list();
 	
@@ -30,6 +32,12 @@ app.controller('rcmController', function($scope, contactResource, practiceResour
         var b = billersResource.findById(encounter.bid);
         if (b.avatar) return '<img src="' + b.avatar + '" />';
         else return '<div>' + b.first.substring(0,1) + b.last.substring(0,1) + '</div>';
+    }
+    
+    $scope.getPractice = function(encounter) {
+	    var contact = contactResource.findById(encounter.cid);
+	    var practice = practiceResource.findById(contact.pid);
+	    return practice.name;
     }
     
     $scope.getAccountPractice = function(encounter) {

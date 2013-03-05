@@ -71,7 +71,9 @@
 @gray: #999;
 @lightgray: #bbb;
 @lightergray: #eee;
+@lightestgray: #f5f5f5;
 @white: #fff;
+@orange: #F3A428;
 @border: 1px solid #e8e8e8;
 @margin: 10px;
 @pagemargin: 20px;
@@ -170,9 +172,40 @@ a {
 	}
 }
 
+.navbar-inner {
+	.flatten(@white);
+	padding: 0;
+	
+	.nav li {
+		a {
+			padding: @margin 59px;
+			color: @black;
+			border-bottom: 2px solid @lightestgray;
+			&:hover { color: @orange; }
+		}
+		
+		&.active a, &.active a:hover {
+			.flatten(@white);
+			color: @orange;
+			border-bottom-color: @orange;
+		}
+	}
+}
+
 .subtext {
-	color: @gray;
 	font-size: 14px;
+	line-height: 1.0;
+	
+	&.gray { color: @gray; }
+
+	.entypo {
+		.opacity(80);
+		font-size: 24px;
+		position: relative;
+		top: 1px;
+		margin-left: @margin;
+	}
+	
 }
 
 // Form Elements
@@ -284,6 +317,11 @@ label {
 
 // Temp
 
+@avatarwidth: 40px;
+@yellow: #f7a600; 
+@red: #ff3c37;
+@green: #3dcc00;
+
 .sidebar {
 	background: @lightergray;
 	height: 500px;
@@ -295,15 +333,15 @@ label {
 		padding-top: @margin;
 		
 		img, div {
-			max-width: 36px;
-			.border-radius(20px);
+			max-width: @avatarwidth;
+			.border-radius(@avatarwidth/2);
 			float: right;
 		}
 		
 		div {
 			text-align: center;
-			padding: 7px 0;
-			width: 36px;
+			padding: 10px 0;
+			width: @avatarwidth;
 			background: @lightergray;
 		}
 	}
@@ -312,6 +350,8 @@ label {
 		border: @border;
 		.border-radius(3px);
 		margin-bottom: @margin/2;
+		display: block;
+		color: @black;
 		.clearfix;
 	
 		.amount {
@@ -332,15 +372,15 @@ label {
 			color: @white;
 			
 			&.pending {
-				background: #f7a600;
+				background: @yellow;
 			}
 			
 			&.rejected {
-				background: #ff3c37;
+				background: @red;
 			}
 			
 			&.success {
-				background: #3dcc00;
+				background: @green;
 			}
 		}
 		
