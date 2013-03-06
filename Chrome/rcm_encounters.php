@@ -3,7 +3,7 @@ $title = 'Encounter';
 require('_header.php'); 
 ?>
 
-<div class="full container" ng-controller="EncountersController">
+<div class="full container" ng-controller="encountersController">
 
 	<ng-include src="'partials/rcm_header.html'"></ng-include>
 	

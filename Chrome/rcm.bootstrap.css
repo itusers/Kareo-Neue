@@ -5294,21 +5294,6 @@ a.whatisthis {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/*
-input { 
-
-	&[type='text'], &[type='password'] {
-		.border-radius(3px);
-		border: @border;
-		.box-shadow(none);
-	}
-      
-	&[type='radio'], &[type='checkbox'] {
-		margin-top: 2px;
-		margin-right: @margin;
-	}
-}
-*/
 label input[type='text'] {
   margin-left: 10px;
   margin-bottom: 0;
@@ -5377,6 +5362,17 @@ label input[type='text'] {
   padding: 10px 0;
   width: 40px;
   background: #eeeeee;
+}
+.main .avatar.small {
+  padding-top: 0;
+}
+.main .avatar.small img,
+.main .avatar.small div {
+  max-width: 24px;
+  font-size: 11px;
+}
+.main .avatar.small div {
+  padding: 5px 0;
 }
 .main .card {
   border: 1px solid #e8e8e8;

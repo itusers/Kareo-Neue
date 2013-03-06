@@ -254,22 +254,6 @@ a {
 
 .buttonrow { margin-top: @margin*2; margin-bottom: @margin*2; }
 
-/*
-input { 
-
-	&[type='text'], &[type='password'] {
-		.border-radius(3px);
-		border: @border;
-		.box-shadow(none);
-	}
-      
-	&[type='radio'], &[type='checkbox'] {
-		margin-top: 2px;
-		margin-right: @margin;
-	}
-}
-*/
-
 label { 
 	input[type='text'] { 
 		margin-left: @margin; 
@@ -318,6 +302,7 @@ label {
 // Temp
 
 @avatarwidth: 40px;
+@avatarsmallwidth: 24px;
 @yellow: #f7a600; 
 @red: #ff3c37;
 @green: #3dcc00;
@@ -343,6 +328,19 @@ label {
 			padding: 10px 0;
 			width: @avatarwidth;
 			background: @lightergray;
+		}
+		
+		&.small {
+			padding-top: 0;
+			
+			img, div {
+				max-width: @avatarsmallwidth;
+				font-size: 11px;
+			}
+			
+			div {
+				padding: 5px 0;
+			}
 		}
 	}
 

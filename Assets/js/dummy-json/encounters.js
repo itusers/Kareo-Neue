@@ -14,12 +14,14 @@ var arr = [];
 
 // --Master config variables--
 
-var max_e = 50;		// max # of encounters
+var max_e = 50;		// max encounters
 var max_amount = 4000;	// max # dollar amount
 var max_b = 10;			// max # of billers
 var max_c = 35;			// max # of contacts/patients
 var max_p = 10;			// max # of practices
 var max_a = 5;			// max # of accounts
+var max_tasks = 100;	// max tasks
+var max_comments = 5;
 
 // --The Loop--
 
@@ -27,6 +29,7 @@ var max_a = 5;			// max # of accounts
 // bid = biller id
 // cid = contact id, or patient id
 
+/*
 for(var i=1; i<=max_e; i++) {
 	var item = rnd({
 		id: "i",
@@ -37,12 +40,13 @@ for(var i=1; i<=max_e; i++) {
 		date_appointment: "$date",
 		date_created: "$dateGreaterThan($.date_appointment)",
 		date_updated: "$dateGreaterThan($.date_created)",
-		comments: "$int(5)",
+		comments: "$int(max_comments)",
 		status: "$int(10)"
 	});
 	
 	arr.push(item);
 }
+*/
 
 // BILLERS
 
@@ -119,6 +123,24 @@ for(var i=1; i<=max_a; i++) {
 }
 */
 
+// TASKS
+// status: -1: deleted | 0: incomplete | 1: completed
+// aid = account id (0: no account associated)
+// bid = biller id (0: no biller associated)
+
+for(var i=1; i<=max_tasks; i++) {
+	var item = rnd({
+		id: "i",
+		title: "$title",
+		aid: "$int(max_a-1)",
+		bid: "$int(max_b-1)",
+		date_created: "$date",
+		comments: "$int(max_comments)",
+		status: "$int(-1,1)"
+	});
+	
+	arr.push(item);
+}
 
 // FINAL OUTPUT
 
