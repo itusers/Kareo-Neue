@@ -30,6 +30,15 @@ app.controller('tasksController', function($scope, contactResource, practiceReso
 	$scope.tasks_closed = tasksResource.filterByStatus(1);
 	$scope.tasks_deleted = tasksResource.filterByStatus(-1);
 	
+	$scope.practices = practiceResource.list();
+	$scope.getPracticeName = function(id) {
+		if (id > 0) {
+			var practice = practiceResource.findById(id);
+			return practice.name;
+		}
+		else return 'All Practices';
+	}
+	
 	$scope.getAvatar = function(task) {
         var b = billersResource.findById(task.bid);
         if (b.avatar) return '<img src="' + b.avatar + '" />';

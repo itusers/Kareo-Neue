@@ -124,6 +124,7 @@
 }
 
 // GENERAL
+body { padding-top: 60px; }
 body, div, p, input {
 	font-size: 16px;
 	color: @black;
@@ -180,22 +181,76 @@ input[type="radio"], input[type="checkbox"] {
 	}
 }
 
-.navbar-inner {
-	.flatten(@white);
-	padding: 0;
+.navbar-inverse .navbar-inner {
+	.flatten(@black);
+	.entypo {
+		position: relative;
+		top: 2px;
+	}
+	
+	.brand {
+		padding-top: 0;
+		padding-bottom: 0;
+		font-size: 21px;
+		font-weight: 100px;
+		color: @white;
+		text-shadow: none;
+	}
+	
+	.dropdown-menu { top: 30px; }
 	
 	.nav li {
 		a {
-			padding: @margin 59px;
-			color: @black;
-			border-bottom: 2px solid @lightestgray;
-			&:hover { color: @orange; }
+/*			border-bottom: 2px solid @lightestgray;*/
+			&:hover { color: @white; }
+			text-shadow: none;
 		}
 		
 		&.active a, &.active a:hover {
-			.flatten(@white);
-			color: @orange;
-			border-bottom-color: @orange;
+			color: @white;
+/*			border-bottom-color: @orange;*/
+		}
+	}
+}
+
+.nav-tabs {
+	li {
+		&.active {
+			a { color: @black; }
+		}
+		
+		a {
+			color: @lightgray;
+			border: 0;
+		
+			&:hover { 
+				color: @link;
+				background: @white; 
+			}
+		}	
+	}	
+}
+
+.nav-pills {
+	li {
+		a {
+			.border-radius(0);
+			color: @lightgray;
+			padding-top: @margin;
+			padding-bottom: @margin;
+			
+			&:hover {
+				background-color: @lightestgray;
+				color: @gray;
+			}
+		}
+	}
+	
+	.active {
+		a, a:hover {
+			background-color: @lightestgray;
+			border-right: 3px solid @orange;
+			color: @black;
 		}
 	}
 }
@@ -214,24 +269,6 @@ input[type="radio"], input[type="checkbox"] {
 		margin-left: @margin;
 	}
 	
-}
-
-.nav-tabs {
-	li {
-		&.active {
-			a { color: @black; }
-		}
-		
-		a {
-			color: @gray;
-			border: 0;
-		
-			&:hover { 
-				color: @link;
-				background: @white; 
-			}
-		}	
-	}	
 }
 
 .label {
@@ -391,7 +428,7 @@ label {
 
 .sidebar {
 	border-right: @border; 
-	padding-right: @margin * 2;
+/*	padding-right: @margin * 2;*/
 	min-height: 400px;
 }
 
