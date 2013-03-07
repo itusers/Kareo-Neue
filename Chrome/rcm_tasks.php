@@ -12,8 +12,9 @@ require('_header.php');
 			<div class="sidebar">
 				<!-- conditional ng-classes: http://jsfiddle.net/JtAZM/4/ -->
 				<ul class="nav nav-pills nav-stacked">
-					<li ng-class="{active: filterCriteria.bid == ''}"><a ng-click="filterCriteria.bid=''">Everyone's tasks</a></li>
+					<li ng-class="{active: filterCriteria.bid != '0' && filterCriteria.bid == ''}"><a ng-click="filterCriteria.bid=''">Everyone's tasks</a></li>
 					<li ng-class="{active: filterCriteria.bid == current_biller.id}"><a ng-click="filterCriteria.bid=current_biller.id">Tasks assigned to me</a></li>
+					<li ng-class="{active: filterCriteria.bid == '0'}"><a ng-click="filterCriteria.bid=0">Unassigned tasks</a></li>
 					<!-- <li ng-class="{active: filterCriteria.pid == 1}"><a ng-click="filterCriteria.pid=1">Practice ID = 1</a></li> -->
 				</ul>
 				<!-- {{ filterCriteria }} -->
