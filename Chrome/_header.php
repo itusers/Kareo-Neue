@@ -37,11 +37,6 @@
 		<script src="../Assets/js/kareodata/coredata.js"></script>
 <!-- 		<script src="../Assets/js/kareodata/lifecycle.js"></script> -->
 		<script src="../Assets/js/kareodata/rcm.js"></script>
-        
-        <!-- Typekit -->
-        <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
 
     </head>
     <body>

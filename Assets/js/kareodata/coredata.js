@@ -145,3 +145,14 @@ app.factory('accountResource', function () {
         }
 	}
 });
+
+
+// GENERIC FUNCTIONS
+
+// pluralizer: 1 day vs 2 days
+// very dumb (3 gooses instead of 3 geese)
+function pluralize(num, singular) {
+	var output = num + ' ' + singular;
+	if (num != 1) output += 's'
+	return output;
+}

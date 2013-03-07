@@ -74,6 +74,9 @@
 @lightestgray: #f5f5f5;
 @white: #fff;
 @orange: #F3A428;
+@yellow: #f7a600; 
+@red: #ff3c37;
+@green: #3dcc00;
 @border: 1px solid #e8e8e8;
 @margin: 10px;
 @pagemargin: 20px;
@@ -123,7 +126,7 @@
 // GENERAL
 body, div, p, input {
 	font-size: 16px;
-	font-color: @black;
+	color: @black;
 	line-height: 1.3;
 	font-family: "proxima-nova", sans-serif;
 }
@@ -139,9 +142,10 @@ h1 {
 }
 
 h2 { 
-	font-size: 36px;
+	font-size: 24px;
 	font-weight: 300;
-	margin-bottom: 30px;
+	
+	a { color: @black; }
 }
 
 h3 {
@@ -163,6 +167,10 @@ a {
 		font-size: 14px;
 		margin-left: 10px;
 	}
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin-top: -4px;
 }
 
 .container {
@@ -206,6 +214,46 @@ a {
 		margin-left: @margin;
 	}
 	
+}
+
+.nav-tabs {
+	li {
+		&.active {
+			a { color: @black; }
+		}
+		
+		a {
+			color: @gray;
+			border: 0;
+		
+			&:hover { 
+				color: @link;
+				background: @white; 
+			}
+		}	
+	}	
+}
+
+.label {
+	.border-radius(10px);
+	padding: 2px 7px 4px;
+	font-weight: normal;
+	text-shadow: none;
+	color: @black;
+	
+	.entypo { font-size: 24px; position: relative; top: 2px; }
+	
+	&.label-comment {
+		background-color: #D9F3FA;
+	}
+	
+	&.label-duedate {
+		background-color: lighten(@orange, 33);
+	}
+	
+	&.label-duetoday {
+		background-color: lighten(@red, 20);
+	}
 }
 
 // Form Elements
@@ -299,51 +347,55 @@ label {
 	.alertband { text-align: left; }
 }
 
-// Temp
+// RCM
 
 @avatarwidth: 40px;
 @avatarsmallwidth: 24px;
-@yellow: #f7a600; 
-@red: #ff3c37;
-@green: #3dcc00;
+
+.current_biller {
+	float: right;
+	margin-top: @margin;
+}
+
+.avatar {
+	padding-top: @margin;
+	margin-left: 5px;
+		
+	img, div {
+		max-width: @avatarwidth;
+		.border-radius(@avatarwidth/2);
+		float: right;
+	}
+		
+	div {
+		text-align: center;
+		padding: 10px 0;
+		width: @avatarwidth;
+		background: @lightergray;
+	}
+		
+	&.small {
+		padding-top: 0;
+			
+		img, div {
+			max-width: @avatarsmallwidth;
+			font-size: 11px;
+/*				float: none;*/
+		}
+			
+		div {
+			padding: 5px 0;
+		}
+	}
+}
 
 .sidebar {
-	background: @lightergray;
-	height: 500px;
+	border-right: @border; 
+	padding-right: @margin * 2;
+	min-height: 400px;
 }
 
 .main {
-
-	.avatar {
-		padding-top: @margin;
-		
-		img, div {
-			max-width: @avatarwidth;
-			.border-radius(@avatarwidth/2);
-			float: right;
-		}
-		
-		div {
-			text-align: center;
-			padding: 10px 0;
-			width: @avatarwidth;
-			background: @lightergray;
-		}
-		
-		&.small {
-			padding-top: 0;
-			
-			img, div {
-				max-width: @avatarsmallwidth;
-				font-size: 11px;
-			}
-			
-			div {
-				padding: 5px 0;
-			}
-		}
-	}
-
 	.card { 
 		border: @border;
 		.border-radius(3px);
@@ -387,5 +439,24 @@ label {
 			padding: @margin;
 		}
 	}
+}
 
+@taskmargin: 24px;
+
+.task {
+	.clearfix;
+	margin-left: -@taskmargin;
+	padding: 7px 0 7px @taskmargin * 2;
+	border-bottom: @border;
+	
+	input {
+		margin-left: -@taskmargin;
+		margin-right: 6px;
+	}
+	
+	a { color: @black; }
+	
+	.misc {
+		float: right;
+	}
 }

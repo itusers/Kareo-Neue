@@ -4,22 +4,9 @@
         <script src="../Assets/bootstrap/js/bootstrap-transition.js"></script>
         <script src="../Assets/bootstrap/js/bootstrap-modal.js"></script>
         
-        <script>
-    		// set #iframe's height dynamically
-    		function resizeIframe() {
-	        	$('#iframe').height($(window).height() - $('#experiment').height() - 5);
-    		}
-
-        	if ($('#iframe')) {
-	        	$(window).load(function() {
-		        	resizeIframe();
-	        	});
-        		
-        		$(window).resize(function() {
-	        		resizeIframe();
-				});
-        	}
-        </script>
+        <!-- Typekit -->
+        <script type="text/javascript" src="//use.typekit.net/usb3bya.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     </body>
 </html>

@@ -127,6 +127,8 @@ for(var i=1; i<=max_a; i++) {
 // status: -1: deleted | 0: incomplete | 1: completed
 // aid = account id (0: no account associated)
 // bid = biller id (0: no biller associated)
+// pid = practice id (0: no practice associated)
+// days_due: weighted towards nothing (anything less than -2 or greater than 3 counts as nothing; 0 means due today)
 
 for(var i=1; i<=max_tasks; i++) {
 	var item = rnd({
@@ -134,9 +136,11 @@ for(var i=1; i<=max_tasks; i++) {
 		title: "$title",
 		aid: "$int(max_a-1)",
 		bid: "$int(max_b-1)",
+		pid: "$int(max_p-1)",
 		date_created: "$date",
+		days_due: "$int(-3,8)",
 		comments: "$int(max_comments)",
-		status: "$int(-1,1)"
+		status: "$int(-1,2)"
 	});
 	
 	arr.push(item);
