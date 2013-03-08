@@ -129,6 +129,7 @@ for(var i=1; i<=max_a; i++) {
 // bid = biller id (0: no biller associated)
 // pid = practice id (0: no practice associated)
 // days_due: weighted towards nothing (anything less than -2 or greater than 3 counts as nothing; 0 means due today)
+// type: 0: nothing | 1: patient | 2: encounter | 3: claim | 4: payment
 
 for(var i=1; i<=max_tasks; i++) {
 	var item = rnd({
@@ -139,12 +140,31 @@ for(var i=1; i<=max_tasks; i++) {
 		pid: "$int(max_p-1)",
 		date_created: "$date",
 		days_due: "$int(-3,8)",
-		comments: "$int(max_comments)",
+		comments: "$int(0,max_comments)",
+		type: "$int(0, 5)",
+		type_id: "$int(max_c-1)",
 		status: "$int(-1,2)"
 	});
 	
 	arr.push(item);
 }
+
+// COMMENTS
+// bid = biller id
+// tid = task id
+
+for(var i=1; i<=max_tasks; i++) {
+	var item = rnd({
+		id: "i",
+		comment: "$description",
+		bid: "$int(max_b-1)",
+		tid: "$int(max_tasks-1)",
+		date: "$date"
+	});
+	
+	arr.push(item);
+}
+
 
 // FINAL OUTPUT
 

@@ -15,7 +15,13 @@ require('_header.php');
 					<li ng-class="{active: filterCriteria.bid != '0' && filterCriteria.bid == ''}"><a ng-click="filterCriteria.bid=''">Everyone's tasks</a></li>
 					<li ng-class="{active: filterCriteria.bid == current_biller.id}"><a ng-click="filterCriteria.bid=current_biller.id">Tasks assigned to me</a></li>
 					<li ng-class="{active: filterCriteria.bid == '0'}"><a ng-click="filterCriteria.bid=0">Unassigned tasks</a></li>
-					<!-- <li ng-class="{active: filterCriteria.pid == 1}"><a ng-click="filterCriteria.pid=1">Practice ID = 1</a></li> -->
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li ng-class="{active: filterCriteria.type != '0' && filterCriteria.type == ''}"><a ng-click="filterCriteria.type=''">All types</a></li>
+					<li ng-class="{active: filterCriteria.type == 1}"><a ng-click="filterCriteria.type=1">Patients</a></li>
+					<li ng-class="{active: filterCriteria.type == 2}"><a ng-click="filterCriteria.type=2">Encounters</a></li>
+					<li ng-class="{active: filterCriteria.type == 3}"><a ng-click="filterCriteria.type=3">Claims</a></li>
+					<li ng-class="{active: filterCriteria.type == 4}"><a ng-click="filterCriteria.type=4">Payments</a></li>
 				</ul>
 				<!-- {{ filterCriteria }} -->
 			</div>
