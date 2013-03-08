@@ -279,18 +279,6 @@ input[type="radio"], input[type="checkbox"] {
 	color: @black;
 	
 	.entypo { font-size: 24px; position: relative; top: 2px; }
-	
-	&.label-comment {
-		background-color: #D9F3FA;
-	}
-	
-	&.label-duedate {
-		background-color: lighten(@orange, 33);
-	}
-	
-	&.label-duetoday {
-		background-color: lighten(@red, 20);
-	}
 }
 
 // Form Elements
@@ -495,5 +483,24 @@ label {
 	
 	.misc {
 		float: right;
+		
+		.entypo { 
+			color: @lightergray;
+			font-size: 36px; 
+			line-height: 0; 
+			position: relative; 
+			top: 5px; 
+		}
+		
+		.due { margin-left: 5px; }
+		
+		.duesoon {
+			color: @lightgray;
+		}
+		
+		.duetoday {
+			color: @red;
+		}
+		
 	}
 }

@@ -5,6 +5,7 @@
 				  <a class="brand dropdown-toggle" href="#">{{ getPracticeName(filterCriteria.pid) }} <span class="entypo">&#59232;</span></a>
 				  <ul class="dropdown-menu">
 					  <li ng-class="{active: filterCriteria.pid == ''}"><a ng-click="filterCriteria.pid=''">{{ getPracticeName() }}</a></li>
+					  <!-- <li ng-class="{active: filterCriteria.pid == ''}"><a ng-click="filterCriteria.pid='7 || 8 || 9'">My Practices</a></li> -->
 					  <li class="divider"></li>
 					  <li ng-class="{active: filterCriteria.pid == practice.id}" ng-repeat="practice in practices"><a ng-click="filterCriteria.pid=practice.id">{{ practice.name }}</a></li>
 				  </ul>

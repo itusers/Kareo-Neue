@@ -40,21 +40,23 @@ app.controller('tasksController', function($scope, contactResource, practiceReso
 	}
 	
 	$scope.getAvatar = function(task) {
-        var b = billersResource.findById(task.bid);
-        if (b.avatar) return '<img src="' + b.avatar + '" />';
-        else return '<div>' + b.first.substring(0,1) + b.last.substring(0,1) + '</div>';
+		if (task.bid) {
+	        var b = billersResource.findById(task.bid);
+	        if (b.avatar) return '<img src="' + b.avatar + '" />';
+	        else return '<div>' + b.first.substring(0,1) + b.last.substring(0,1) + '</div>';			
+		}
     }
 	
 	$scope.getComments = function(task) {
-		if (task.comments) return '<span class="label label-comment"><span class="entypo">&#59160;</span> ' + task.comments + '</span>';
+		if (task.comments) return '<span class="comment"><span class="entypo">&#59160;</span></span>';
 	}
 	
 	$scope.getDaysDue = function(task) {
 		var output;
 		if (task.days_due >= -2 && task.days_due <= 3) {
-			if (task.days_due > 0) return '<span class="label label-duedate">Due in ' + pluralize(task.days_due, 'day') + '</span>';
-			else if (task.days_due == 0) return '<span class="label label-duetoday">Due today</span>';
-			else return '<span class="label label-duetoday">Due ' + pluralize(-task.days_due, 'day') + ' ago</span>';
+			if (task.days_due > 0) return '<span class="due duesoon">' + pluralize(task.days_due, 'day') + '</span>';
+			else if (task.days_due == 0) return '<span class="due duetoday">Today</span>';
+			else return '<span class="due duetoday">' + pluralize(-task.days_due, 'day') + ' overdue</span>';
 		}
 	}
 	
