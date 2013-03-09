@@ -143,7 +143,8 @@ for(var i=1; i<=max_tasks; i++) {
 		comments: "$int(0,max_comments)",
 		type: "$int(0, 5)",
 		type_id: "$int(max_c-1)",
-		status: "$int(-1,2)"
+		status: "$int(-1,2)",
+		checked: "$.status"
 	});
 	
 	arr.push(item);
@@ -153,17 +154,17 @@ for(var i=1; i<=max_tasks; i++) {
 // bid = biller id
 // tid = task id
 
-for(var i=1; i<=max_tasks; i++) {
-	var item = rnd({
-		id: "i",
-		comment: "$description",
-		bid: "$int(max_b-1)",
-		tid: "$int(max_tasks-1)",
-		date: "$date"
-	});
-	
-	arr.push(item);
-}
+// for(var i=1; i<=max_tasks; i++) {
+// 	var item = rnd({
+// 		id: "i",
+// 		comment: "$description",
+// 		bid: "$int(max_b-1)",
+// 		tid: "$int(max_tasks-1)",
+// 		date: "$date"
+// 	});
+// 	
+// 	arr.push(item);
+// }
 
 
 // FINAL OUTPUT

@@ -31,12 +31,12 @@ require('_header.php');
 			<div class="btn btn-primary pull-right">New Task</div>
 			<tabs>
 				<pane heading="Open Tasks">
-					<div class="task" ng-repeat="task in tasks_open | filter:filterCriteria">
+					<div class="task" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_open | filter:filterCriteria">
 						<ng-include src="'partials/task.html'"></ng-include>
 					</div>
 				</pane>
 				<pane heading="Completed">
-					<div class="task" ng-repeat="task in tasks_closed | filter:filterCriteria">
+					<div class="task checked" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_closed | filter:filterCriteria">
 						<ng-include src="'partials/task.html'"></ng-include>
 					</div>
 				</pane>
