@@ -140,7 +140,6 @@ for(var i=1; i<=max_tasks; i++) {
 		pid: "$int(max_p-1)",
 		date_created: "$date",
 		days_due: "$int(-3,8)",
-		comments: "$int(0,max_comments)",
 		type: "$int(0, 5)",
 		type_id: "$int(max_c-1)",
 		status: "$int(-1,2)",
