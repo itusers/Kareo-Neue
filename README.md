@@ -1,4 +1,4 @@
-K
+Kareo Neue
 =
 
-UX assets for K
+UX assets for Kareo
