@@ -1,12 +1,12 @@
 <ng-include src="'partials/rcm_header.html'"></ng-include>
 	
-<div class="task" ng-class="{checked: task.checked == 1}">
-	<input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
-	<span class="lead">{{ task.title }}</span>
-</div>
-
 <div class="row">	
 	<div class="span9">
+		<div class="task" ng-class="{checked: task.checked == 1}">
+			<input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
+			<span class="lead">{{ task.title }}</span>
+		</div>
+		
 		<h3>Discussion</h3>
 		<div class="row comment" ng-repeat="comment in comments">
 			<div class="span1">
@@ -28,7 +28,19 @@
 		</div>
 	</div>
 	
-	<div class="span3">
-		<h3>Details</h3>
+	<div class="span3 infobar">
+		<button class="btn"><span class="entypo">&#9998;</span> Edit</button>
+		<button class="btn"><span class="entypo">&#59177;</span> Delete</button>
+		<div class="info">
+			<p ng-bind-html-unsafe="getTypeAndId(task)">
+			</p>
+			<p>
+				<span class="entypo">&#128100;</span> Created by {{ getBillerName(task.author_id) }} on {{ task.date_created | date: shortDate }}
+				<br />Assigned to {{ getBillerName(task.bid) }}
+			</p>
+			<p>
+				<span class="entypo">&#128197;</span> Due in {{ task.days_due }} days
+			</p>
+		</div>
 	</div>
 </div> <!-- /.row -->

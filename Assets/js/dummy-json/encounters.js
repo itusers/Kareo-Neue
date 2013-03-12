@@ -126,6 +126,7 @@ for(var i=1; i<=max_a; i++) {
 // TASKS
 // status: -1: deleted | 0: incomplete | 1: completed
 // aid = account id (0: no account associated)
+// author_id = assignee (biller id)
 // bid = biller id (0: no biller associated)
 // pid = practice id (0: no practice associated)
 // days_due: weighted towards nothing (anything less than -2 or greater than 3 counts as nothing; 0 means due today)
@@ -136,12 +137,13 @@ for(var i=1; i<=max_tasks; i++) {
 		id: "i",
 		title: "$title",
 		aid: "$int(max_a-1)",
+		author_id: "$int(1, max_b-1)",
 		bid: "$int(max_b-1)",
 		pid: "$int(max_p-1)",
 		date_created: "$date",
 		days_due: "$int(-3,8)",
 		type: "$int(0, 5)",
-		type_id: "$int(max_c-1)",
+		type_id: "$int(1,max_c-1)",
 		status: "$int(-1,2)",
 		checked: "$.status"
 	});
@@ -157,8 +159,8 @@ for(var i=1; i<=max_tasks; i++) {
 // 	var item = rnd({
 // 		id: "i",
 // 		comment: "$description",
-// 		bid: "$int(max_b-1)",
-// 		tid: "$int(max_tasks-1)",
+// 		bid: "$int(1,max_b-1)",
+// 		tid: "$int(1,max_tasks-1)",
 // 		date: "$date"
 // 	});
 // 	
