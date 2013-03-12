@@ -14,6 +14,7 @@ Should be used inconjunction with coredata.js
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/tasks', {templateUrl: 'partials/task-list.html', controller: 'TaskListController'}).
+	  when('/tasks/new', {templateUrl: 'partials/task-new.html', controller: 'TaskListController'}).
       when('/tasks/:taskId', {templateUrl: 'partials/task-detail.html', controller: 'TaskListController'}).
       otherwise({redirectTo: '/tasks'});
 }]);

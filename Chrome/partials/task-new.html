@@ -1,0 +1,30 @@
+<ng-include src="'partials/rcm_header.html'"></ng-include>
+	
+<div class="row">	
+	<div class="span12">
+		<div class="task new" ng-class="{checked: task.checked == 1}">
+			<div>
+				<input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
+				<input type="text" class="input-title lead input-block-level" placeholder="Title..." />
+			</div>
+			<div class="separator">
+				<span class="entypo">&#128100;</span>
+				<input type="text" class="input-title input-xxlarge" placeholder="Assign to someone..." />
+			</div>
+			<div class="separator">
+				<span class="entypo">&#128197;</span>
+				<input type="text" class="input-title input-xxlarge" placeholder="Set due date..." />
+			</div>
+			<button class="btn btn-primary pull-right">Save Task</button>
+		</div>
+		
+		<h3>Other tasks related to Justin Hall's encounter on June 6, 2011</h3>
+		<div class="task" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_open | filter:{type:2} | limitTo:2">
+			<ng-include src="'partials/task-lineitem.html'"></ng-include>
+		</div>
+		<div class="task checked" ng-class="{checked: task.checked == 2}" ng-repeat="task in tasks_closed | filter:{type:2} | limitTo:2">
+			<ng-include src="'partials/task-lineitem.html'"></ng-include>
+		</div>
+	</div>
+	
+</div> <!-- /.row -->

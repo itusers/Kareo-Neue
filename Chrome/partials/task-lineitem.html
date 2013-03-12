@@ -1,9 +1,10 @@
 <input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
 <span>
 	<span class="misc">
+		<span ng-show="task.status" class="pull-right due done">{{ task.date_created | date:shortDate }}</span>
 		<span class="avatar small" ng-bind-html-unsafe="getAvatar(task.bid)"></span>
 		<span ng-bind-html-unsafe="getType(task)"></span>
-		<span ng-bind-html-unsafe="getDaysDue(task)"></span>
+		<span ng-hide="task.status" ng-bind-html-unsafe="getDaysDue(task)"></span>
 		<span ng-bind-html-unsafe="hasComments(task)"></span>
 	</span>
 	<a href="#/tasks/{{task.id}}">{{ task.title }}</a>

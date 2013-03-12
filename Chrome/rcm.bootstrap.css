@@ -5292,6 +5292,9 @@ input[type="checkbox"] {
 .label.label-payment {
   background-color: #ffe0df;
 }
+.offwhite {
+  background-color: #bbbbbb;
+}
 .btn {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -5307,7 +5310,8 @@ input[type="checkbox"] {
   box-shadow: none;
   color: #00b0da;
   font-size: 14px;
-  font-weight: 600;
+  /*    font-weight: 600;*/
+
   margin-right: 10px;
 }
 .btn:hover {
@@ -5320,8 +5324,10 @@ input[type="checkbox"] {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn.entypo {
+.btn .entypo {
   font-size: 30px;
+  position: relative;
+  top: 2px;
 }
 .btn-primary {
   border: 0;
@@ -5515,9 +5521,35 @@ label input[type='text'] {
 .task:after {
   clear: both;
 }
-.task input {
+.task input[type=checkbox],
+.task.new .entypo {
   margin-left: -24px;
   margin-right: 6px;
+}
+.task.new .entypo {
+  position: relative;
+  top: 3px;
+  color: #bbbbbb;
+}
+.task .input-title {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  top: 6px;
+  font-size: 16px;
+}
+.task .input-title.lead {
+  font-size: 21px;
+  font-weight: 200;
+}
+.task .input-title:focus {
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 .task a {
   color: #222222;
@@ -5543,11 +5575,50 @@ label input[type='text'] {
 .task .misc .duetoday {
   color: #ff3c37;
 }
+.task .misc .done {
+  color: #999999;
+  position: relative;
+  top: 5px;
+}
+.task .separator {
+  border-top: 1px solid #f5f5f5;
+}
 .task.checked {
   background-color: #f5f5f5;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+}
+.task.checked .label,
+.task.checked .avatar div {
+  background-color: #bbbbbb;
+}
+.task.checked .comment .entypo {
+  color: #bbbbbb;
+}
+.task.new {
+  padding-bottom: 10px;
+  padding-right: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
 }
 div.comment {
   margin-bottom: 10px;
+}
+.info {
+  margin-top: 20px;
+}
+.info p {
+  font-size: 14px;
+  color: #bbbbbb;
+  margin-left: -24px;
+  padding-left: 48px;
+}
+.info p .entypo {
+  margin-left: -24px;
+  margin-right: 6px;
+  font-size: 24px;
+  position: relative;
+  top: 1px;
 }

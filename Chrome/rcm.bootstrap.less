@@ -287,6 +287,10 @@ input[type="radio"], input[type="checkbox"] {
 	&.label-payment { background-color: lighten(@red, 33); }
 }
 
+.offwhite {
+	background-color: @lightgray;
+}
+
 // Form Elements
 
 .btn {
@@ -480,9 +484,34 @@ label {
 	padding: 7px 0 7px @taskmargin * 2;
 	border-bottom: @border;
 	
-	input {
+	input[type=checkbox], &.new .entypo {
 		margin-left: -@taskmargin;
 		margin-right: 6px;
+	}
+	&.new .entypo {
+		position: relative;
+		top: 3px;
+		color: @lightgray;
+	}
+	
+	.input-title {
+		background: none;
+		border: none;
+		.box-shadow(none);
+		position: relative;
+		top: 6px;
+		font-size: 16px;
+		
+		&.lead {
+			font-size: 21px;
+			font-weight: 200;
+		}
+		
+		&:focus {
+			border: 0;
+			.box-shadow(none);
+		}
+		
 	}
 	
 	a { color: @black; }
@@ -499,20 +528,32 @@ label {
 		}
 		
 		.due { margin-left: 5px; font-size: 11px; text-transform: uppercase; }
+		.duesoon { color: @lightgray; }
+		.duetoday { color: @red; }
+		.done { color: @gray; position: relative; top: 5px; }
 		
-		.duesoon {
-			color: @lightgray;
-		}
 		
-		.duetoday {
-			color: @red;
-		}
-		
+	}
+	
+	.separator {
+		border-top: 1px solid @lightestgray;
 	}
 	
 	&.checked { 
 		background-color: @lightestgray;
-		.opacity(90); 
+		.opacity(75); 
+
+		.label, .avatar div {
+			background-color: @lightgray;
+		}
+		.comment .entypo { color: @lightgray; }
+	}
+	
+	&.new {
+		padding-bottom: @margin;
+		padding-right: @margin * 2;
+		.border-radius(3px);
+		border: @border;
 	}
 }
 
