@@ -1,0 +1,84 @@
+<!-- Template file for learning Angular JS -->
+<!-- DO NOT MODIFY THIS FILE! DUPLICATE THIS FOR YOUR OWN PURPOSES -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app"> <!-- ng-app is needed to kickstart the Angular application -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Template file for learning Angular JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+    <!-- Angular and Kareo data files -->
+	<script src="../Assets/js/underscore-min.js"></script> <!-- http://underscorejs.org/ -->
+	<script src="../Assets/js/angular.min.js"></script> <!-- http://docs.angularjs.org/api/ -->
+	<script src="../Assets/js/bootstrap-gh-pages/ui-bootstrap-tpls-0.1.0.min.js"></script>
+	
+	<!-- This is where our Angular controller/models come in -->
+	<!-- Be careful touching these files; Abe uses them constantly, so if you want to play with it,
+		 it might be better just to copy them into your own sandbox directory -->
+	<script src="../Assets/js/kareodata/coredata.js"></script>
+	<script src="../Assets/js/kareodata/rcm.js"></script>
+
+	<style>
+	table td { border: 1px solid #eee; }
+	</style>
+
+</head>
+<body>
+
+	This is where the magic happens...
+	
+	<!-- 
+	******************************************************************************
+	STEP 1: Take a look inside coredata.js 
+
+	First thing you'll notice is that app gets defined. We'll be using app to 
+	define our controllers, factories, and such.
+
+	Next, you'll notice that there are two "types" of things that get defined:
+	controllers and factories. What's the difference? Long answer:
+	http://jacobmumm.com/2012/08/28/angular-js-services/
+
+	Short answer:
+	
+	FACTORIES give you ability to use reuseable code or functions, whereas
+	CONTROLLERS pertain to a given scope. Here's a good demo to show the 
+	difference betwee the two.
+	
+	******************************************************************************
+	-->
+	
+	<!-- Uncomment the code block below -->
+	<!-- <div ng-controller="contactListController">
+		<table>
+			<tr ng-repeat="contact in contacts">
+				<td>{{ contact.first }}</td>
+				<td>{{ contact.last }}</td>
+				<td>{{ contact.email }}</td>
+				<td>{{ contact.phone }}</td>
+				<td>{{ contact.address }}<br />
+					{{ contact.city }}, {{ contact.state }} {{ contact.zip }}</td>
+			</tr>
+		</table>
+	</div> -->
+	
+	<!-- 
+	******************************************************************************
+	For the above code, notice that you're interfacing with the controller
+	"contactListController." In the View (this html page), we have access to 
+	anything within $scope -- in this case, $scope.contacts. We did a ng-repeat,
+	which is basically a loop, and we're grabbing each "contact" within contacts.
+
+	We can also include functions within the scope. Notice the function 
+	getFullName(contact). In the above, let's replace the first two cells 
+	(first, last) with this function.
+	
+	******************************************************************************
+	-->
+
+</body>
+</html>
