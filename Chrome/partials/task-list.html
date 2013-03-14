@@ -4,40 +4,38 @@
 	<div class="span3">
 		<div class="sidebar">
 			<!-- conditional ng-classes: http://jsfiddle.net/JtAZM/4/ -->
+
 			<ul class="nav nav-pills nav-stacked">
-				<li ng-class="{active: filterCriteria.bid != '0' && filterCriteria.bid == ''}"><a ng-click="filterCriteria.bid=''">Everyone's tasks</a></li>
-				<li ng-class="{active: filterCriteria.bid == current_biller.id}"><a ng-click="filterCriteria.bid=current_biller.id">Tasks assigned to me</a></li>
-				<li ng-class="{active: filterCriteria.bid == '0'}"><a ng-click="filterCriteria.bid=0">Unassigned tasks</a></li>
+				<li ng-class="{active: filterCriteria.type != '0' && filterCriteria.type == '' && filterCriteria.status == 0}"><a ng-click="filterCriteria.status=0; filterCriteria.type=''">All tasks</a></li>
+				<li ng-class="{active: filterCriteria.type == 1 && filterCriteria.status == 0}"><a ng-click="filterCriteria.status=0; filterCriteria.type=1">Patients</a></li>
+				<li ng-class="{active: filterCriteria.type == 2 && filterCriteria.status == 0}"><a ng-click="filterCriteria.status=0; filterCriteria.type=2">Encounters</a></li>
+				<li ng-class="{active: filterCriteria.type == 3 && filterCriteria.status == 0}"><a ng-click="filterCriteria.status=0; filterCriteria.type=3">Claims</a></li>
+				<li ng-class="{active: filterCriteria.type == 4 && filterCriteria.status == 0}"><a ng-click="filterCriteria.status=0; filterCriteria.type=4">Payments</a></li>
 			</ul>
 			<ul class="nav nav-pills nav-stacked">
-				<li ng-class="{active: filterCriteria.type != '0' && filterCriteria.type == ''}"><a ng-click="filterCriteria.type=''">All categories</a></li>
-				<li ng-class="{active: filterCriteria.type == 1}"><a ng-click="filterCriteria.type=1">Patients</a></li>
-				<li ng-class="{active: filterCriteria.type == 2}"><a ng-click="filterCriteria.type=2">Encounters</a></li>
-				<li ng-class="{active: filterCriteria.type == 3}"><a ng-click="filterCriteria.type=3">Claims</a></li>
-				<li ng-class="{active: filterCriteria.type == 4}"><a ng-click="filterCriteria.type=4">Payments</a></li>
+				<li ng-class="{active: filterCriteria.status == 1}"><a ng-click="filterCriteria.status='1'; filterCriteria.type=''">Logbook</a></li>
 			</ul>
 			<!-- {{ filterCriteria }} -->
 		</div>
 	</div> <!-- /.sidebar -->
-		
+			
 	<div class="span9 main">
-		<a href="#/tasks/new" class="btn btn-primary pull-right">New Task</a>
-		<tabs>
-			<pane heading="Open Tasks">
-				<div class="task" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_open | filter:filterCriteria">
-					<ng-include src="'partials/task-lineitem.html'"></ng-include>
-				</div>
-			</pane>
-			<pane heading="Completed">
-				<div class="task checked" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_closed | filter:filterCriteria">
-					<ng-include src="'partials/task-lineitem.html'"></ng-include>
-				</div>
-			</pane>
-			<pane heading="Deleted">
-				<div class="task" ng-repeat="task in tasks_deleted | filter:filterCriteria">
-					<ng-include src="'partials/task-lineitem.html'"></ng-include>
-				</div>
-			</pane>
-		</tabs>
+		<div class="row shelf">
+			<div class="span6">
+				<div class="btn-group">
+					<button class="btn" ng-class="{active: filterCriteria.bid != '0' && filterCriteria.bid == ''}" ng-click="filterCriteria.bid=''">Everyone</button>
+					<button class="btn" ng-class="{active: filterCriteria.bid == current_biller.id}" ng-click="filterCriteria.bid=current_biller.id">My Tasks</button>
+					<button class="btn" ng-class="{active: filterCriteria.bid == '0'}" ng-click="filterCriteria.bid=0">Unassigned</button>
+				</div>				
+			</div>
+			<div class="span3">
+				<a href="#/tasks/new" class="btn btn-primary pull-right">New Task</a>				
+			</div>
+		</div>
+
+		<div class="task_outer" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks | filter:filterCriteria">
+			<ng-include src="'partials/task-lineitem.html'"></ng-include>
+		</div>			
+
 	</div> <!-- /.main -->
 </div> <!-- /.row -->

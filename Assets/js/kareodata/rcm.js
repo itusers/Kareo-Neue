@@ -37,9 +37,11 @@ app.controller('TaskListController', function($scope, $routeParams, contactResou
 	
 	$scope.filterCriteria = {
 		bid: '',
-		type: ''
+		type: '',
+		status: 0
 	};
 	
+	$scope.tasks = tasksResource.list();
 	$scope.tasks_open = tasksResource.filterByStatus(0);
 	$scope.tasks_closed = tasksResource.filterByStatus(1);
 	$scope.tasks_deleted = tasksResource.filterByStatus(-1);

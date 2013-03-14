@@ -19,10 +19,10 @@
 		</div>
 		
 		<h3>Other tasks related to Justin Hall's encounter on June 6, 2011</h3>
-		<div class="task" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_open | filter:{type:2} | limitTo:2">
+		<div class="task_outer" ng-class="{checked: task.checked == 1}" ng-repeat="task in tasks_open | filter:{type:2} | limitTo:2">
 			<ng-include src="'partials/task-lineitem.html'"></ng-include>
 		</div>
-		<div class="task checked" ng-class="{checked: task.checked == 2}" ng-repeat="task in tasks_closed | filter:{type:2} | limitTo:2">
+		<div class="task_outer checked" ng-class="{checked: task.checked == 2}" ng-repeat="task in tasks_closed | filter:{type:2} | limitTo:2">
 			<ng-include src="'partials/task-lineitem.html'"></ng-include>
 		</div>
 	</div>

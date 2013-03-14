@@ -124,7 +124,10 @@
 }
 
 // GENERAL
-body { padding-top: 60px; }
+body { 
+/*	background-color: @lightestgray;*/
+	padding-top: 60px; 
+}
 body, div, p, input, textarea {
 	font-size: 16px;
 	color: @black;
@@ -181,8 +184,10 @@ input[type="radio"], input[type="checkbox"] {
 	}
 }
 
-.navbar-inverse .navbar-inner {
-	.flatten(@black);
+.navbar .navbar-inner {
+	.flatten(@white);
+	border: 1px solid @lightestgray;
+	
 	.entypo {
 		position: relative;
 		top: 2px;
@@ -193,7 +198,7 @@ input[type="radio"], input[type="checkbox"] {
 		padding-bottom: 0;
 		font-size: 21px;
 		font-weight: 100px;
-		color: @white;
+		color: @orange;
 		text-shadow: none;
 	}
 	
@@ -202,12 +207,14 @@ input[type="radio"], input[type="checkbox"] {
 	.nav li {
 		a {
 /*			border-bottom: 2px solid @lightestgray;*/
-			&:hover { color: @white; }
+			&:hover { color: @orange; }
 			text-shadow: none;
 		}
 		
 		&.active a, &.active a:hover {
-			color: @white;
+			color: @orange;
+			.box-shadow(none);
+			background-color: transparent;
 /*			border-bottom-color: @orange;*/
 		}
 	}
@@ -292,6 +299,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 // Form Elements
+.shelf { 
+	margin-bottom: @margin; 
+}
+
+.btn-group {
+	.btn { margin-right: 0; }
+}
 
 .btn {
     .border-radius(20px);
@@ -308,7 +322,7 @@ input[type="radio"], input[type="checkbox"] {
 	    border-color: darken(#ddd, 7);
 	    background-color: @white;
     }
-    &:active {
+    &.active, &:active {
 	    .box-shadow(none);
     }
     
@@ -478,11 +492,25 @@ label {
 
 @taskmargin: 24px;
 
+.task_outer {
+	border-bottom: @border;
+	
+	&.checked { 
+		background-color: @lightestgray;
+		.opacity(75); 
+
+		.label, .avatar div {
+			background-color: @lightgray;
+		}
+		.comment .entypo { color: @lightgray; }
+	}
+}
+
 .task {
 	.clearfix;
 	margin-left: -@taskmargin;
 	padding: 7px 0 7px @taskmargin * 2;
-	border-bottom: @border;
+	
 	
 	input[type=checkbox], &.new .entypo {
 		margin-left: -@taskmargin;
@@ -537,16 +565,6 @@ label {
 	
 	.separator {
 		border-top: 1px solid @lightestgray;
-	}
-	
-	&.checked { 
-		background-color: @lightestgray;
-		.opacity(75); 
-
-		.label, .avatar div {
-			background-color: @lightgray;
-		}
-		.comment .entypo { color: @lightgray; }
 	}
 	
 	&.new {
