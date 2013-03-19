@@ -2,9 +2,11 @@
 	
 <div class="row">	
 	<div class="span9">
-		<div class="task" ng-class="{checked: task.checked == 1}">
-			<input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
-			<span class="lead">{{ task.title }}</span>
+		<div class="task_outer" ng-class="{checked: task.checked == 1}">
+			<div class="task">
+				<input type="checkbox" ng-checked="task.checked" ng-model="task.checked" />
+				<span class="lead">{{ task.title }}</span>				
+			</div>
 		</div>
 		
 		<h3>Discussion</h3>

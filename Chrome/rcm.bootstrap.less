@@ -241,10 +241,11 @@ input[type="radio"], input[type="checkbox"] {
 .nav-pills {
 	li {
 		a {
-			.border-radius(0);
+/*			.border-radius(0);*/
 			color: @lightgray;
 			padding-top: @margin;
 			padding-bottom: @margin;
+			margin-right: @margin * 2;
 			
 			&:hover {
 				background-color: @lightestgray;
@@ -255,9 +256,7 @@ input[type="radio"], input[type="checkbox"] {
 	
 	.active {
 		a, a:hover {
-			background-color: @lightestgray;
-			border-right: 3px solid @orange;
-			color: @black;
+			background-color: @primary;
 		}
 	}
 }
@@ -502,7 +501,7 @@ label {
 		.label, .avatar div {
 			background-color: @lightgray;
 		}
-		.comment .entypo { color: @lightgray; }
+		.comment .entypo, .misc .duetoday { color: @lightgray; }
 	}
 }
 

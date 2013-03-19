@@ -8,8 +8,10 @@ require('_header.php');
 	<ng-include src="'partials/rcm_header.html'"></ng-include>
 	
 	<div class="row">
-		<div class="span4 sidebar">
-			Sidebar
+		<div class="span4">
+			<div class="sidebar">
+				Sidebar				
+			</div>
 		</div> <!-- /.sidebar -->
 		
 		<div class="span8 main">
