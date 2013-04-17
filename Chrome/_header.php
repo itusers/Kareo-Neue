@@ -1,5 +1,5 @@
 <?php 
-	$devmode = 1; // for production, set $devmode to '0'
+	$devmode = 0; // for production, set $devmode to '0'
 /* 	$cssprefix = 'chrome'; */
 	$cssprefix = 'rcm';
 ?>
