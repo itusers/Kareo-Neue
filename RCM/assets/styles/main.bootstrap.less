@@ -1,0 +1,124 @@
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+// ============================================================================================================
+//
+// BOOTSTRAP CORE FILES
+//
+// ============================================================================================================
+
+// Core variables and mixins
+@import "../bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../bootstrap/less/mixins.less";
+
+// CSS Reset
+@import "../bootstrap/less/reset.less";
+
+// Grid system and page structure
+@import "../bootstrap/less/scaffolding.less";
+@import "../bootstrap/less/grid.less";
+@import "../bootstrap/less/layouts.less";
+
+// Base CSS
+@import "../bootstrap/less/type.less";
+@import "../bootstrap/less/code.less";
+@import "../bootstrap/less/forms.less";
+@import "../bootstrap/less/tables.less";
+
+// Components: common
+// @import "../bootstrap/less/sprites.less";		// replaced with Font Awesome:
+@import "../font-awesome/less/font-awesome.less";
+// @import "../bootstrap/less/dropdowns.less";
+// @import "../bootstrap/less/wells.less";
+// @import "../bootstrap/less/component-animations.less";
+// @import "../bootstrap/less/close.less";
+
+// Components: Buttons & Alerts
+@import "../bootstrap/less/buttons.less";
+@import "../bootstrap/less/button-groups.less";
+@import "../bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "../bootstrap/less/navs.less";
+@import "../bootstrap/less/navbar.less";
+@import "../bootstrap/less/breadcrumbs.less";
+@import "../bootstrap/less/pagination.less";
+@import "../bootstrap/less/pager.less";
+
+// Components: Popovers
+@import "../bootstrap/less/modals.less";
+// @import "../bootstrap/less/tooltip.less";
+// @import "../bootstrap/less/popovers.less";
+
+// Components: Misc
+// @import "../bootstrap/less/thumbnails.less";
+// @import "../bootstrap/less/media.less";
+// @import "../bootstrap/less/labels-badges.less";
+// @import "../bootstrap/less/progress-bars.less";
+// @import "../bootstrap/less/accordion.less";
+// @import "../bootstrap/less/carousel.less";
+// @import "../bootstrap/less/hero-unit.less";
+
+// Utility classes
+@import "../bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
+// ============================================================================================================
+//
+// GLOBAL VARIABLES
+//
+// ============================================================================================================
+
+// Colors
+
+@black: #222;
+@gray: #999;
+@lightgray: #bbb;
+@lightergray: #eee;
+@white: #F5F5F5;
+
+// Typographic defaults
+@default-fontsize: 18px;
+@default-lineheight: 1.4;
+@default-lineheight-header: 1.1;
+
+@small-fontsize: 14px;
+
+// Spacing + widths
+
+@border: 1px solid #e8e8e8;
+@margin: 10px;
+@pagemargin: 20px;
+
+// ============================================================================================================
+//
+// TYPOGRAPHY
+// Google fonts referenced in header.php
+//
+// ============================================================================================================
+
+body, div, p, input, button {
+	font-family: "Open Sans", sans-serif;
+	font-size: @default-fontsize;
+	line-height: @default-lineheight;
+	color: @black;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Open Sans", sans-serif;
+	line-height: @default-lineheight-header;
+	color: @black;
+}
+
+
+// ============================================================================================================
+//
+// COMPONENTS
+//
+// ============================================================================================================
+
+
