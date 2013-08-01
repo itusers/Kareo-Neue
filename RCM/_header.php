@@ -25,6 +25,7 @@
         <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/angular.min.js"></script>
+        <script type="text/javascript" src="assets/js/rcm.js"></script>
         
         <?php if ($in_dev_mode) { ?>
         <link rel="stylesheet/less" type="text/css" href="assets/styles/<?php echo $cssprefix; ?>.bootstrap-3.less" />
@@ -49,29 +50,35 @@
 
         <!-- Header -->
         <div class="navbar navbar-fixed-top">
-            <a class="navbar-brand" href="#">
-                <!-- <img src="assets/images/kareo_logo.png" alt="Kareo 2.0" /> -->
-            </a>
+            <div class="container">
+                <div class="row">
+                    <h1 id="logo" class="col-12">
+                        &nbsp;
+                    </h1>                    
+                </div>
+            </div>
+            
             <div class="subnav">
-                <!-- <div class="row"> -->
-                    <!-- <div class="col-lg-2"> -->
-                        <a href="#"><i class="icon-list-alt"></i> Claims</a>
-                    <!-- </div> -->
-                    <!-- <div class=""> -->
-                        <ul class="nav nav-pills col-lg-10">
+                <div class="container">
+                    <div class="row">
+                        <ul class="nav nav-pills col-2">
+                            <li><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
+                        </ul>
+
+                        <ul class="nav nav-pills col-8">
                             <li><a href="#">Rejected</a></li>
                             <li class="active"><a href="#">Denied</a></li>
                             <li><a href="#">No Response</a></li>
                             <li><a href="#">Later</a></li>
                         </ul>
-                    <!-- </div> -->
-                    <div class="col-lg-2">
-                        <!-- notification goes here -->
-                    </div>
-                <!--</div>  <!-- /.row -->
-                
-            </div>
-        </div>
+
+                        <div class="col-2">
+                            <!-- notification goes here -->
+                        </div>
+                    </div>  <!-- /.row -->
+                </div>
+            </div>  <!-- /.subnav -->
+        </div>  <!-- /.navbar -->
 
         <!-- Sidebar -->
 

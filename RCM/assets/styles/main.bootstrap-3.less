@@ -82,11 +82,11 @@
 @primary: #DB9141;
 
 // Typographic defaults
-@default-fontsize: 18px;
+@default-fontsize: 16px;
 @default-lineheight: 1.4;
 @default-lineheight-header: 1.1;
 
-@small-fontsize: 14px;
+@small-fontsize: 13px;
 
 // Spacing + widths
 
@@ -94,12 +94,12 @@
 @margin: 10px;
 @pagemargin: 20px;
 
-// ============================================================================================================
+// =========================================================================================================
 //
 // TYPOGRAPHY
 // Google fonts referenced in header.php
 //
-// ============================================================================================================
+// =========================================================================================================
 
 body, div, p, input, button {
 	font-family: "Open Sans", sans-serif;
@@ -115,43 +115,58 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-// ============================================================================================================
+// =========================================================================================================
 //
-// COMPONENTS
+// BASIC COMPONENTS
 //
-// ============================================================================================================
+// =========================================================================================================
 
 body { 
-	padding-top: 120px; 
+	padding-top: 130px; 
 	background-color: @offwhite;
 }
 
+.form-control {
+	height: 26px;
+}
+
+.card {
+	.border-radius(3px);
+	background-color: @white;
+	.box-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+
+	.pad { padding: 10px 15px };
+}
+
+
+// =========================================================================================================
+//
+// SECTIONS
+//
+// =========================================================================================================
+
 .navbar {
-	background: @white url('../images/kareo_logo.png') 15px 5px no-repeat;
+	background-color: @white;
 	color: @black;
 	border-bottom: @border;
 	padding: 0;
 	.box-shadow(3px 0 5px rgba(0,0,0,0.33));
-}
-.navbar-brand {
-	color: @primary;
-	margin-left: 0;
-	
-	// img { 
-	// 	width: 60%; 
-	// 	margin: -10px 0 0 -55px;
-	// }
+
+	#logo {
+		background: @white url('../images/kareo_logo.png') top left no-repeat;
+		margin: 10px;
+	}
 }
 
 .subnav {
 	
 	border-top: @border;
-	margin-top: 50px;
+	// margin-top: 50px;
 	padding: 0px 15px;
 
 	a {
 		color: #222;
-		margin-top: 10px;
+		// margin-top: 10px;
 	}
 
 	.nav > li > a {
@@ -170,3 +185,4 @@ body {
 	border-right: @border;
 	z-index: 100;
 }
+
