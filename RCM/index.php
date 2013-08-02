@@ -6,30 +6,64 @@
 
 	<div class="row">
 		<aside class="col-3">
-			<div class="form-group">
-				<label for="exampleInputEmail">Group by</label>
-				<select class="form-control">
-					<option>Remark codes</option>
-				</select>
-		    </div>
-		    <div class="form-group">
-				<label for="exampleInputEmail">Sub-group by</label>
-				<select class="form-control">
-					<option>Insurance</option>
-				</select>
-		    </div>
-		    <div class="form-group">
-				<label for="exampleInputEmail">Show claims from</label>
-				<select class="form-control">
-					<option>All practices</option>
-				</select>
-		    </div>
+			<div class="descriptor pad">Group by</div>
+			<button type="button" class="btn btn-warning btn-block">Remark codes <i class="icon-arrow-right"></i> Insurance</button>
+			<button type="button" class="btn btn-link btn-block">Insurance <i class="icon-arrow-right"></i> Remark codes</button>
+
+			<hr />
+
+			<div class="descriptor pad">Show claims from</div>
+			<button type="button" class="btn btn-warning btn-block">All your practices</button>
+			<button type="button" class="btn btn-link btn-block" ng-repeat="practice in practices">{{ practice.name }}</button>
+
 		</aside>
 		
 		<section class="col-9">
-			<div class="card hide-overflow">
+			
+			<div class="panel">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<div class="list-info list-amount">$5000</div>
+					<div class="list-info list-encounters">120</div>
+					<strong>CO-140</strong> Patient/Insured health identification number and name do not match.
+				</div>
+				<!-- List group -->
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div>
+			<div class="panel">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><strong>CO-140</strong> Patient/Insured health identification number and name do not match.</div>
+				<!-- List group -->
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div>
+			<div class="panel">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><strong>CO-140</strong> Patient/Insured health identification number and name do not match.</div>
+				<!-- List group -->
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div>
 
-				<!-- remark code -->
+			<!-- <div class="card hide-overflow">
+
+				<!-- remark code 
 				<div class="remark">
 					<div class="row">
 						<div class="col-8">
@@ -76,7 +110,7 @@
 					</div>
 				</div>
 
-				<!-- remark code -->
+				<!-- remark code 
 				<div class="remark">
 					<div class="row">
 						<div class="col-8">
@@ -135,7 +169,7 @@
 					</div>
 				</div>
 
-				<!-- remark code -->
+				<!-- remark code 
 				<div class="remark">
 					<div class="row">
 						<div class="col-8">
@@ -153,7 +187,8 @@
 					</div>
 				</div>
 
-			</div>
+			</div> -->
+
 		</section>
 	</div>
 

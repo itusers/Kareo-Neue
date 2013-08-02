@@ -23,6 +23,7 @@
 
         <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/tooltip.js"></script>
+        <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/dropdown.js"></script>
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/angular.min.js"></script>
         <script type="text/javascript" src="assets/js/rcm.js"></script>
@@ -62,7 +63,15 @@
                 <div class="container">
                     <div class="row">
                         <ul class="nav nav-pills col-3">
-                            <li><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i id="dropdown-arrow" class="icon-angle-right"></i><i class="icon-list-alt"></i> Claims </a>
+                                <!-- Sidebar -->
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icon-rocket"></i> Launchpad</a></li>
+                                    <li><a href="#"><i class="icon-medkit"></i> Encounters</a></li>
+                                    <li class="active"><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
+                                    <li><a href="#"><i class="icon-money"></i> Payments</a></li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <ul class="nav nav-pills col-6">
@@ -79,13 +88,4 @@
                 </div>
             </div>  <!-- /.subnav -->
         </div>  <!-- /.navbar -->
-
-        <!-- Sidebar -->
-
-        <ul id="sidebar" class="nav nav-pills nav-stacked">
-            <li><a href="#"><i class="icon-rocket"></i> Launchpad</a></li>
-            <li><a href="#"><i class="icon-medkit"></i> Encounters</a></li>
-            <li class="active"><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
-            <li><a href="#"><i class="icon-money"></i> Payments</a></li>
-        </ul>
         

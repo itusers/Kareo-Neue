@@ -158,11 +158,50 @@ h4 {
 	border-radius: 0;
 }
 
+.dropdown {
+	#dropdown-arrow { 
+		float: right;
+		margin: 5px 0 0 5px;
+		.transition(all 0.2s ease-in-out); 
+	}
+
+	&.open #dropdown-arrow { .rotate(90deg); }
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: @primary-bright;
+}
+
+.panel { 
+	padding-bottom: 0; 
+	border-radius: 0;
+	margin-bottom: -2px;
+	
+	&.open { 
+		padding-bottom: 15px;
+		border-radius: @panel-border-radius; 
+		margin-bottom: 10px;
+		margin-top: 10px;
+
+		.list-group-flush { display: block; }
+	}
+}
+.panel-heading {
+	margin-bottom: 0;
+}
+.list-info { .pull-right; text-align: right; margin-left: 15px; }
+.list-amount { width: 75px; }
+.list-encounters { width: 50px; }
+.list-group-flush {
+	display: none;
+	margin-top: -2px;
+}
+
 .card {
 	margin-bottom: 20px; 
 	background-color: @white;
-	.border-radius(3px);
-	.box-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+	border: 1px solid @panel-border;
+	border-radius: @panel-border-radius;
+	.box-shadow(0 1px 1px rgba(0,0,0,.05));
 
 	.pad { padding: 10px 15px };
 	.leftpad { padding-left: 30px; }
@@ -268,21 +307,12 @@ h4 {
 	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus { background-color: @primary-bright; }
 }
 
-#sidebar {
-	// display: none;		// hide for now..
-	width: 200px;
-	position: absolute;
-	// left: 0;
-	top: 90px;
-	background: @white;
-	border-right: @border;
-	z-index: 100;
-}
-
 .descriptor {
 	color: @lightgray;
 	text-transform: uppercase;
 	font-size: @small-fontsize;
+
+	&.pad { margin-bottom: 10px; }
 }
 
 .remark {
@@ -386,6 +416,8 @@ h4 {
 	}
 }
 
+.btn-block { text-align: left; padding-left: 15px; }
+.btn-link { color: @black; }
 .btn-group { margin-top: 20px; margin-bottom: 10px; }
 .actionbar {
 	// position: fixed;
