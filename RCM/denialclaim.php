@@ -1,19 +1,10 @@
 <?php require_once('_header.php'); ?>
 
 <div class="container">
-	<div class="row meta-info">
-		<div class="col-4 col-offset-4">
-			Practice info
-		</div>
-		<div class="col-4">
-			Provider info
-		</div>
-	</div>
-
 	<div class="row">
 		<aside class="col-4">
 			<div class="card">
-				<div class="top pad">
+				<div class="pad">
 					<div class="descriptor">Remark Code</div>
 					<h2>CO-140</h2>
 					<p>Patient/Insured health identification number and name do not match.</p>
@@ -21,6 +12,8 @@
 						<div class="progress-bar progress-bar-success" style="width: 15%"></div>
 					</div>
 				</div>
+			</div>
+			<div class="card">
 				<div class="pad">
 					<div class="descriptor">Insurance</div>
 					<h2>Aetna Health</h2>
@@ -30,6 +23,11 @@
 						<div class="progress-bar progress-bar-success" style="width: 66%"></div>
 					</div>
 				</div>
+			</div>
+
+			<div class="meta-info">
+				Practice info
+				Provider info
 			</div>
 		</aside>
 

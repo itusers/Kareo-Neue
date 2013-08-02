@@ -20,7 +20,8 @@
 @import "../bootstrap-3.0.0-wip/less/scaffolding.less";
 @import "../bootstrap-3.0.0-wip/less/type.less";
 @import "../bootstrap-3.0.0-wip/less/code.less";
-@import "../bootstrap-3.0.0-wip/less/grid.less";
+// @import "../bootstrap-3.0.0-wip/less/grid.less";
+@import "../bootstrap-3.0.0-wip/less/grid-noresp.less";	// AY added
 
 @import "../bootstrap-3.0.0-wip/less/tables.less";
 @import "../bootstrap-3.0.0-wip/less/forms.less";
@@ -146,8 +147,9 @@ h3 { margin-top: 0;}
 }
 
 .card {
-	.border-radius(3px);
+	margin-bottom: 20px; 
 	background-color: @white;
+	.border-radius(3px);
 	.box-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 
 	.pad { padding: 10px 15px };
@@ -291,8 +293,8 @@ h3 { margin-top: 0;}
 }
 
 .meta-info {
-	margin-bottom: 20px;
-	div { color: @gray; }
+	margin-top: 20px;
+	color: @gray;
 }
 
 .patient {
