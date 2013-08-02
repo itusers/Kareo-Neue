@@ -266,6 +266,10 @@ $(document).ready(function() {
 			$(this).addClass('open');
 			$(this).children('.insurances').slideDown(300);
 		}
+	})
+
+	$('.insurance').click(function() {
+		window.location.href = 'denialclaim.php';
 	});
 });
 

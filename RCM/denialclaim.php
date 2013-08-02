@@ -25,6 +25,7 @@
 					<div class="descriptor">Insurance</div>
 					<h2>Aetna Health</h2>
 					<h3>1-800-123-4456</h3>
+					<p>Estimated time for filing: 90 days</p>
 					<div class="progress">
 						<div class="progress-bar progress-bar-success" style="width: 66%"></div>
 					</div>
@@ -35,7 +36,7 @@
 		<section class="col-8">	
 			<div class="patient card">
 				<div class="header pad row">
-					<h2 class="col-6"><i class="icon-female"></i> Stacey Davis <i class="icon-pencil"></i></h2> 
+					<h2 class="col-6"><i class="icon-female"></i> Stacey Davis <i class="icon-pencil edit"></i></h2> 
 					<div class="col-3">
 						info
 					</div>
@@ -129,7 +130,7 @@
 					</div>
 					<div class="row">
 						<div class="col-2 date">8/21/2013</div>
-						<div class="col-1 timeline"><i class="icon-edit-sign"></i></div>
+						<div class="col-1 timeline"><i class="icon-pencil"></i></div>
 						<div class="col-9">Edited claim line-item by Jason</div>
 					</div>
 					<div class="row">
@@ -148,20 +149,27 @@
 				</div>
 			</div>
 
-			<div class="btn-group btn-group-justified">
-				<a href="#" class="btn btn-default">Appeal</a>
-				<a href="#" class="btn btn-default">Snooze</a>
-				<a href="#" class="btn btn-default">Settle</a>
-				<a href="#" class="btn btn-default">Reassign</a>
-				<a href="#" class="btn btn-default" disabled="disabled">Resubmit</a>
-			</div>
-
 		</section>
 
 
 	</div>
 
-
+	<div class="navbar navbar-fixed-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-8 col-offset-4">
+					<div class="btn-group btn-group-justified">
+						<a href="#" class="btn btn-large btn-default">Appeal</a>
+						<a href="#" class="btn btn-large btn-default">Snooze</a>
+						<a href="#" class="btn btn-large btn-default">Settle</a>
+						<a href="#" class="btn btn-large btn-default">Reassign</a>
+						<a href="#" class="btn btn-large btn-default" disabled="disabled">Resubmit</a>
+					</div>				
+				</div>
+			</div>
+		</div>
+	
+	</div>
 
 </div>
 <?php require_once('_footer.php'); ?>

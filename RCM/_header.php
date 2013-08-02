@@ -67,7 +67,7 @@
 
                         <ul class="nav nav-pills col-6">
                             <li><a href="#">Rejected</a></li>
-                            <li class="active"><a href="#">Denied</a></li>
+                            <li class="active"><a href="index.php">Denied</a></li>
                             <li><a href="#">No Response</a></li>
                             <li><a href="#">Later</a></li>
                         </ul>
