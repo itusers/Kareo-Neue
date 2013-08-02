@@ -6,6 +6,11 @@ Created by Abe Yang 8/1/2013
 	+ eid = encounter id
 */
 
+// =========================================================================================================
+//
+// ANGULAR MAGIC
+//
+// =========================================================================================================
 'use strict';
 
 var app = angular.module('app', []);
@@ -130,7 +135,7 @@ app.factory('remarkResource', function () {
 
 	var data = [
 		{id:1,code:"CO-140",desc:"Patient/Insured health identification number and name do not match."},
-		{id:2,code:"MA-130",desc:"our claim contains incomplete and/or invalid information, and no appeal rights are afforded because the claim is unprocessable."},
+		{id:2,code:"MA-130",desc:"Our claim contains incomplete and/or invalid information, and no appeal rights are afforded because the claim is unprocessable."},
 		{id:3,code:"MA-61",desc:"Missing/incomplete/invalid social security number or health insurance claim number"},
 		{id:4,code:"co-134",desc:"asdfasdf"},
 		{id:5,code:"co-134",desc:"asdfasdf"}]
@@ -240,5 +245,27 @@ app.factory('billersResource', function () {
             });
         }
 	}
+});
+
+// =========================================================================================================
+//
+// JQUERY
+//
+// =========================================================================================================
+
+$(document).ready(function() {
+	$('i').tooltip({html: true});
+
+	$('.remark').click(function() {
+		if ($(this).hasClass('open')) {
+			$(this).removeClass('open');
+			$(this).children('.insurances').slideUp(300);
+			// console.log()
+		}
+		else {
+			$(this).addClass('open');
+			$(this).children('.insurances').slideDown(300);
+		}
+	});
 });
 

@@ -21,8 +21,8 @@
         <!-- Using Open Sans: http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-        <!-- jQuery and AngularJS are commented out. Uncomment if you plan on using it -->
         <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/tooltip.js"></script>
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/angular.min.js"></script>
         <script type="text/javascript" src="assets/js/rcm.js"></script>
@@ -49,7 +49,7 @@
         <![endif]-->
 
         <!-- Header -->
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-static-top">
             <div class="container">
                 <div class="row">
                     <h1 id="logo" class="col-12">
@@ -61,18 +61,18 @@
             <div class="subnav">
                 <div class="container">
                     <div class="row">
-                        <ul class="nav nav-pills col-2">
+                        <ul class="nav nav-pills col-3">
                             <li><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
                         </ul>
 
-                        <ul class="nav nav-pills col-8">
+                        <ul class="nav nav-pills col-6">
                             <li><a href="#">Rejected</a></li>
                             <li class="active"><a href="#">Denied</a></li>
                             <li><a href="#">No Response</a></li>
                             <li><a href="#">Later</a></li>
                         </ul>
 
-                        <div class="col-2">
+                        <div class="col-3">
                             <!-- notification goes here -->
                         </div>
                     </div>  <!-- /.row -->

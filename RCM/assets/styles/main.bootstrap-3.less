@@ -77,9 +77,11 @@
 @gray: #999;
 @lightgray: #bbb;
 @lightergray: #eee;
+@lightestgray: #f5f5f5;
 @white: #fff;
 @offwhite: #FCFBF0;
 @primary: #DB9141;
+@primary-bright: #E4B036;
 
 // Typographic defaults
 @default-fontsize: 16px;
@@ -114,6 +116,7 @@ h1,h2,h3,h4,h5,h6 {
 	color: @black;
 }
 
+h2 { font-size: 30px; }
 
 // =========================================================================================================
 //
@@ -122,12 +125,24 @@ h1,h2,h3,h4,h5,h6 {
 // =========================================================================================================
 
 body { 
-	padding-top: 130px; 
+	// padding-top: 130px; 
+	padding-bottom: 40px;
 	background-color: @offwhite;
 }
 
+h2 {
+	margin-top: 0;
+	margin-bottom: 7px;
+}
+
+h3 { margin-top: 0;}	
+
 .form-control {
 	height: 26px;
+}
+
+.tooltip-inner {
+	border-radius: 0;
 }
 
 .card {
@@ -136,6 +151,36 @@ body {
 	.box-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
 
 	.pad { padding: 10px 15px };
+	.leftpad { padding-left: 30px; }
+	.top { border-bottom: @border;}
+
+	&.hide-overflow { overflow-x: hidden; }
+}
+
+.progress {
+	border-radius: 10px;
+	.box-shadow(none);
+	background-color: @lightergray;
+}
+.progress-bar {
+	.box-shadow(none);
+}
+
+.icon-female { color: #ffb4d6; }
+.icon-male { color: #00cffc; }
+.icon-pencil { 
+	color: @primary; 
+	.opacity(0);
+	.transition(opacity 0.2s ease-in-out);
+}
+.icon-comment { color: @primary-bright; }
+// .icon-comment {
+// 	color: @white;
+// 	text-shadow: 0 1px 1px @black;
+// }
+
+.show-edit() {
+	.icon-pencil { .opacity(100); }
 }
 
 
@@ -150,7 +195,7 @@ body {
 	color: @black;
 	border-bottom: @border;
 	padding: 0;
-	.box-shadow(3px 0 5px rgba(0,0,0,0.33));
+	.box-shadow(3px 0 5px rgba(0,0,0,0.15));
 
 	#logo {
 		background: @white url('../images/kareo_logo.png') top left no-repeat;
@@ -161,7 +206,6 @@ body {
 .subnav {
 	
 	border-top: @border;
-	// margin-top: 50px;
 	padding: 0px 15px;
 
 	a {
@@ -173,6 +217,8 @@ body {
 		padding: 10px 15px;
 		border-radius: 0;
 	}
+
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus { background-color: @primary-bright; }
 }
 
 #sidebar {
@@ -186,3 +232,87 @@ body {
 	z-index: 100;
 }
 
+.descriptor {
+	color: @lightgray;
+	text-transform: uppercase;
+	font-size: @small-fontsize;
+}
+
+.remark {
+	.row { border-bottom: @border; }
+
+	i { 
+		float: left; 
+		margin-left: -15px;
+		margin-top: 3px;
+		.transition(all 0.2s ease-in-out);
+	}
+
+	.insurances {
+		display: none;
+	}
+
+
+	&.open {
+		i {
+			.rotate(90deg);
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		p { text-decoration: underline; }
+	}
+}
+
+.insurance {
+	background-color: @lightestgray;
+
+	&:hover {
+		.leftpad { text-decoration: underline; }
+	}
+}
+
+.meta-info {
+	margin-bottom: 20px;
+	div { color: @gray; }
+}
+
+.patient {
+	.header:hover {
+		.show-edit();
+	}
+
+	.lifecycle { 
+		position: relative; 
+
+		i { 
+			position: absolute; 
+			top: -3px;
+
+			&.icon-2x { top: -20px; }
+		}
+	}
+	.progress { height: 10px; }
+	.progress-bar { float:right; }
+
+	.date { .text-right; text-transform: uppercase; }
+	.timeline {
+		.text-center;
+	}
+
+	.history {
+		button { margin-top: 10px; float: right; }
+		.row { padding-bottom: 10px; }
+	}
+}
+
+.btn-group { margin-top: 20px; }
+.actionbar {
+	// position: fixed;
+	bottom: 0;
+	height: 50px;
+	margin-top: 20px;
+	// background-color: @black;
+	// color: @white;
+}
