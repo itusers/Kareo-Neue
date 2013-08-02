@@ -280,13 +280,20 @@ $(document).ready(function() {
 	$('.btn-group-justified a').click(function(e) {
 		e.preventDefault();
 		var btn = $(this);
-		var stamp = $('.stamp-' + btn.attr('id'));
+		var stamp = $('.current .stamp-' + btn.attr('id'));
+		var patient = stamp.parent();
 		
 		// massive chaining: 
 		// show relevant stamp -> delay -> swipe current patient away + show next patient 
 		// -> swap meta info (provider + practice)
 		stamp.show().addClass('animated bounceIn').delay(700).queue(function(nxt) {
-			stamp.parent().addClass('animated fadeOutLeft');
+			patient.addClass('animated fadeOutLeft');
+			nxt();
+		}).delay(300).queue(function(nxt) {
+			// patient.hide();
+			// patient.next().show();
+			patient.removeClass('current').next().addClass('animated fadeInRight current');
+			// console.log(patient.next());
 			nxt();
 		});
 	})
