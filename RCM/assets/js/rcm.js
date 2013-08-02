@@ -254,7 +254,12 @@ app.factory('billersResource', function () {
 // =========================================================================================================
 
 $(document).ready(function() {
-	$('i').tooltip({html: true});
+	// overall denials view
+
+	// fake clicking on a link
+	$('.insurance').click(function() {
+		window.location.href = 'denialclaim.php';
+	});
 
 	$('.remark').click(function() {
 		if ($(this).hasClass('open')) {
@@ -266,10 +271,25 @@ $(document).ready(function() {
 			$(this).addClass('open');
 			$(this).children('.insurances').slideDown(300);
 		}
+	});
+
+	// denials claim view
+
+	$('i').tooltip({html: true});
+
+	$('.btn-group-justified a').click(function(e) {
+		e.preventDefault();
+		var btn = $(this);
+		var stamp = $('.stamp-' + btn.attr('id'));
+		
+		// massive chaining: 
+		// show relevant stamp -> delay -> swipe current patient away + show next patient 
+		// -> swap meta info (provider + practice)
+		stamp.show().addClass('animated bounceIn').delay(700).queue(function(nxt) {
+			stamp.parent().addClass('animated fadeOutLeft');
+			nxt();
+		});
 	})
 
-	$('.insurance').click(function() {
-		window.location.href = 'denialclaim.php';
-	});
 });
 
