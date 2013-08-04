@@ -7,14 +7,20 @@
 	<div class="row">
 		<aside class="col-3">
 			<div class="descriptor pad">Group by</div>
-			<button type="button" class="btn btn-warning btn-block">Remark codes <i class="icon-arrow-right"></i> Insurance</button>
-			<button type="button" class="btn btn-link btn-block">Insurance <i class="icon-arrow-right"></i> Remark codes</button>
+			
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">Remark codes <i class="icon-arrow-right"></i> Insurance</a></li>
+				<li><a href="#">Insurance <i class="icon-arrow-right"></i> Remark codes</a></li>
+			</ul>
 
 			<hr />
 
 			<div class="descriptor pad">Show claims from</div>
-			<button type="button" class="btn btn-warning btn-block">All your practices</button>
-			<button type="button" class="btn btn-link btn-block" ng-repeat="practice in practices">{{ practice.name }}</button>
+
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">All your practices</a></li>
+				<li ng-repeat="practice in practices"><a href="#">{{ practice.name }}</a></li>
+			</ul>
 
 		</aside>
 		
