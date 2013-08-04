@@ -118,7 +118,7 @@ app.factory('insuranceResource', function () {
 		{id:2,name:"Medicare",phone:"1-800-445-6789"},
 		{id:3,name:"American Family Insurance",phone:"1-800-987-6543"},
 		{id:4,name:"Kaiser Permanente",phone:"1-800-101-1100"},
-		{id:5,name:"UnitedHealth Group",phone:"1-800-416-0623"}];
+		{id:5,name:"United Health Group",phone:"1-800-416-0623"}];
 	
 	return {
 		list: function() {
@@ -134,12 +134,14 @@ app.factory('insuranceResource', function () {
 
 app.factory('remarkResource', function () {
 
+	// http://www.wpc-edi.com/reference/codelists/healthcare/remittance-advice-remark-codes/
+
 	var data = [
-		{id:1,code:"CO-140",desc:"Patient/Insured health identification number and name do not match."},
-		{id:2,code:"MA-130",desc:"Our claim contains incomplete and/or invalid information, and no appeal rights are afforded because the claim is unprocessable."},
-		{id:3,code:"MA-61",desc:"Missing/incomplete/invalid social security number or health insurance claim number"},
-		{id:4,code:"co-134",desc:"asdfasdf"},
-		{id:5,code:"co-134",desc:"asdfasdf"}]
+		{id:1,code:"CO-140",desc:"Patient/Insured health identification number and name do not match.",amount:"$5000",enc:120},
+		{id:2,code:"MA-130",desc:"Our claim contains incomplete and/or invalid information, and no appeal rights are afforded because the claim is unprocessable.",amount:"$4200",enc:147},
+		{id:3,code:"MA-61",desc:"Missing/incomplete/invalid social security number or health insurance claim number",amount:"$3600",enc:92},
+		{id:4,code:"MA-25",desc:"A patient may not elect to change a hospice provider more than once in a benefit period.",amount:"$2100",enc:78},
+		{id:5,code:"MA-19",desc:"Information was not sent to the Medigap insurer due to incorrect/invalid information you submitted concerning that insurer. Please verify your information and submit your secondary claim directly to that insurer.",amount:"$1450",enc:64}]
 	
 	return {
 		list: function() {
@@ -183,21 +185,19 @@ app.factory('billersResource', function () {
 $(document).ready(function() {
 	// overall denials view
 
-	// fake clicking on a link
-	$('.insurance').click(function() {
-		window.location.href = 'denialclaim.php';
-	});
-
-	$('.remark').click(function() {
-		if ($(this).hasClass('open')) {
-			$(this).removeClass('open');
-			$(this).children('.insurances').slideUp(300);
-			// console.log()
+	$('.panel-heading').click(function() {
+		var panel = $(this).parent();
+		if (panel.hasClass('open')) {
+			panel.removeClass('open');
 		}
 		else {
-			$(this).addClass('open');
-			$(this).children('.insurances').slideDown(300);
+			panel.addClass('open');
 		}
+	});
+
+	// fake clicking on a link
+	$('.list-group-item').click(function() {
+		window.location.href = 'denialclaim.php';
 	});
 
 	// denials claim view
