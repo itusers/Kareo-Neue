@@ -22,6 +22,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
         <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="assets/js/moment.min.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/tooltip.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/dropdown.js"></script>
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
