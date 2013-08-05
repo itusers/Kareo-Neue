@@ -87,9 +87,9 @@
 					</div>
 					<div class="lifecycle">
 						<!-- DOS -->
-						<i class="icon-circle text-muted" style="left: 0%;" data-toggle="tooltip" title="<strong>Date of Service</strong> 7/3/2013"></i>
+						<i class="icon-circle text-muted" style="left: 0%;" data-toggle="tooltip" title="<strong>Date of Service</strong> {{prettydate(patient.dos)}}"></i>
 						<!-- Estimated filing deadline -->
-						<i class="icon-frown text-danger" style="left: 98%;" data-toggle="tooltip" title="<strong>Filing Deadline</strong> 11/3/2013"></i>
+						<i class="icon-frown text-danger" style="left: 98%;" data-toggle="tooltip" title="<strong>Filing Deadline</strong> {{deadlinefromdate(patient.dos)}}"></i>
 						<!-- TODAY -->
 						<i class="icon-map-marker text-success icon-2x" style="left: 83%;" data-toggle="tooltip" title="<strong>TODAY</strong>"></i>
 
@@ -146,7 +146,7 @@
 					<h3>Activity History</h3>
 					<div class="history-inner">
 						<div class="row">
-							<div class="col-2 date">7/3/2013</div>
+							<div class="col-2 date">{{prettydate(patient.dos)}}</div>
 							<div class="col-1 timeline"><i class="icon-circle text-muted"></i></div>
 							<div class="col-9">Date of service</div>
 						</div>

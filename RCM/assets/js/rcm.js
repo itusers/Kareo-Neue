@@ -40,11 +40,25 @@ app.controller('DenialsListController', function($scope, practiceResource, insur
 
 app.controller('DenialController', function($scope, patientResource) {
 
+	// global vars
+	$scope.deadline = 90;
+
 	$scope.patients = patientResource.list();
 
 	// transforms YYYYMMDD => M/D/YYYY
 	$scope.prettydate = function(date) {
 		return moment(date, 'YYYYMMDD').format('l')
+	}
+
+	// shows duration (in days) between two dates (YYYYMMDD format)
+	$scope.duration = function(date1, date2) {
+		var a = moment(date1, 'YYYYMMDD');
+		var b = moment(date2, 'YYYYMMDD');
+		return a.diff(b, 'days');
+	}
+
+	$scope.deadlinefromdate = function(date) {
+		return moment(date, 'YYYYMMDD').add('days',this.deadline).format('l')
 	}
 });
 
@@ -55,9 +69,10 @@ app.factory('patientResource', function () {
 	// make life easier by using ../dummy-json/index.html
 
 	var data = [
-		{id:1,first:"Buffy",last:"Summers",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130703"},
-		{id:2,first:"Xander",last:"Harris",gender:'male',dob:"19770323",ssn:"455-345-1099",policy:"FACIL156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130623"},
-		{id:3,first:"Willow",last:"Rosenburg",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20121107"}
+		{id:1,first:"Stacey",last:"Davis",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130703"},
+		{id:2,first:"Gregorio",last:"Harris",gender:'male',dob:"19770323",ssn:"455-345-1099",policy:"FACIL156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130623"},
+		{id:3,first:"Nichelle",last:"Truong",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20121107"},
+		{id:4,first:"Terry",last:"Toner",gender:'male',dob:"19560605",ssn:"345-123-8765",policy:"LOFAL231568",group:"226630001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130723"}
 	];
 		
 	return {
@@ -155,10 +170,10 @@ app.factory('remarkResource', function () {
 		{id:3,code:"MA-61",desc:"Missing/incomplete/invalid social security number or health insurance claim number",amount:"$3600",enc:92},
 		{id:4,code:"MA-25",desc:"A patient may not elect to change a hospice provider more than once in a benefit period.",amount:"$2100",enc:78},
 		{id:5,code:"MA-19",desc:"Information was not sent to the Medigap insurer due to incorrect/invalid information you submitted concerning that insurer. Please verify your information and submit your secondary claim directly to that insurer.",amount:"$1450",enc:64},
-		{id:6,code:"N-170",desc:"A new/revised/renewed certificate of medical necessity is needed",amount:"$3200",enc:114},
-		{id:7,code:"N-591",desc:"Payment based on an Independent Medical Examination (IME) or Utilization Review (UR)",amount:"$2800",enc:35},
-		{id:8,code:"M-32",desc:"This is a conditional payment made pending a decision on this service by the patient's primary payer. This payment may be subject to refund upon your receipt of any additional payment for this service from another payer. You must contact this office immediately upon receipt of an additional payment for this service.",amount:"$2200",enc:12},
-		{id:9,code:"M-60",desc:"Missing Certificate of Medical Necessity",amount:"$1750",enc:16}]
+		{id:6,code:"N-170",desc:"A new/revised/renewed certificate of medical necessity is needed",amount:"$1200",enc:114},
+		{id:7,code:"N-591",desc:"Payment based on an Independent Medical Examination (IME) or Utilization Review (UR)",amount:"$800",enc:35},
+		{id:8,code:"M-32",desc:"This is a conditional payment made pending a decision on this service by the patient's primary payer. This payment may be subject to refund upon your receipt of any additional payment for this service from another payer. You must contact this office immediately upon receipt of an additional payment for this service.",amount:"$650",enc:12},
+		{id:9,code:"M-60",desc:"Missing Certificate of Medical Necessity",amount:"$550",enc:16}]
 	
 	return {
 		list: function() {
