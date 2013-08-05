@@ -1,5 +1,5 @@
 <?php 
-	$in_dev_mode = 1;      // for production, set $in_dev_mode to '0'
+	$in_dev_mode = 0;      // for production, set $in_dev_mode to '0'
     $cssprefix = 'main';
 
     // Kirby Toolkit. http://toolkit.getkirby.com/
