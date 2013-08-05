@@ -217,11 +217,17 @@ $(document).ready(function() {
 
 	$('.lifecycle i').tooltip({html: true});
 
-	$('.btn-group-justified a').click(function(e) {
+	$('.action').click(function(e) {
 		e.preventDefault();
 		var btn = $(this);
-		var stamp = $('.current .stamp-' + btn.attr('id'));
+		var id = btn.attr('id');
+		var stamp = $('.current .stamp-' + id);
 		var patient = stamp.parent();
+
+		if (id == 'snooze') {
+			var val = btn.parent().find('input').val();
+			$('.current .stamp-' + id + ' .val').html(val);
+		}
 		
 		// massive chaining: 
 		// show relevant stamp -> delay -> swipe current patient away + show next patient 

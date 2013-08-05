@@ -56,14 +56,14 @@
 				</div>
 				<div class="stamp stamp-snooze">
 					<i class="icon-time"></i> Snoozed for 
-					<br /><span class="days">5</span> days
+					<br /><span class="val">5</span> days
 				</div>
 				<div class="stamp stamp-settle">
 					<i class="icon-legal"></i> Settled
 				</div>
 				<div class="stamp stamp-reassign">
 					<i class="icon-user"></i> Reassigned to 
-					<br /><span class="user">Jason Leu</span>
+					<br /><span class="val">Jason Leu</span>
 				</div>
 				<div class="stamp stamp-resubmit">
 					<i class="icon-refresh"></i> Resubmitted
@@ -103,7 +103,7 @@
 						<i class="icon-ban-circle text-danger" style="left: 75%;" data-toggle="tooltip" title="<strong>Denial</strong> 10/11/2013"></i>
 	
 						<div class="progress progress-striped">
-							<div class="progress-bar progress-bar-warning" style="width: 33%"></div>
+							<div class="progress-bar progress-bar-warning" style="width: 25%"></div>
 						</div>
 					</div> <!-- /.lifecycle -->
 				</div>
@@ -144,44 +144,46 @@
 
 				<div class="pad history">
 					<h3>Activity History</h3>
-					<div class="row">
-						<div class="col-2 date">7/3/2013</div>
-						<div class="col-1 timeline"><i class="icon-circle text-muted"></i></div>
-						<div class="col-9">Date of service</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date">8/16/2013</div>
-						<div class="col-1 timeline"><i class="icon-circle-blank text-primary"></i></div>
-						<div class="col-9">Claim submitted by Abe Yang</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date text-danger">8/20/2013</div>
-						<div class="col-1 timeline"><i class="icon-remove text-danger"></i></div>
-						<div class="col-9 text-danger"><strong>Rejected</strong>. Aenean lacinia bibendum nulla sed onsectetur. Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date">8/21/2013</div>
-						<div class="col-1 timeline"><i class="icon-comment"></i></div>
-						<div class="col-9"><strong>Jason Leu</strong>: Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date">8/21/2013</div>
-						<div class="col-1 timeline"><i class="icon-pencil"></i></div>
-						<div class="col-9">Edited claim line-item by Jason</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date">9/19/2013</div>
-						<div class="col-1 timeline"><i class="icon-circle-blank text-primary"></i></div>
-						<div class="col-9">Claim submitted by Jason Leu</div>
-					</div>
-					<div class="row">
-						<div class="col-2 date">Today</div>
-						<div class="col-1 timeline"><i class="icon-comment"></i></div>
-						<div class="col-9">
-							<textarea class="form-control" rows="2"></textarea>
-							<button type="button" class="btn btn-primary" disabled="disabled">Add comment</button>
+					<div class="history-inner">
+						<div class="row">
+							<div class="col-2 date">7/3/2013</div>
+							<div class="col-1 timeline"><i class="icon-circle text-muted"></i></div>
+							<div class="col-9">Date of service</div>
 						</div>
-					</div>
+						<div class="row">
+							<div class="col-2 date">8/16/2013</div>
+							<div class="col-1 timeline"><i class="icon-circle-blank text-primary"></i></div>
+							<div class="col-9">Claim submitted by Abe Yang</div>
+						</div>
+						<div class="row">
+							<div class="col-2 date text-danger">8/20/2013</div>
+							<div class="col-1 timeline"><i class="icon-remove text-danger"></i></div>
+							<div class="col-9 text-danger"><strong>Rejected</strong>. Aenean lacinia bibendum nulla sed onsectetur. Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+						</div>
+						<div class="row">
+							<div class="col-2 date">8/21/2013</div>
+							<div class="col-1 timeline"><i class="icon-comment"></i></div>
+							<div class="col-9"><strong>Jason Leu</strong>: Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</div>
+						</div>
+						<div class="row">
+							<div class="col-2 date">8/21/2013</div>
+							<div class="col-1 timeline"><i class="icon-pencil"></i></div>
+							<div class="col-9">Edited claim line-item by Jason</div>
+						</div>
+						<div class="row">
+							<div class="col-2 date">9/19/2013</div>
+							<div class="col-1 timeline"><i class="icon-circle-blank text-primary"></i></div>
+							<div class="col-9">Claim submitted by Jason Leu</div>
+						</div>
+						<div class="row today">
+							<div class="col-2 date">Today</div>
+							<div class="col-1 timeline"><i class="icon-comment"></i></div>
+							<div class="col-9">
+								<textarea class="form-control" rows="2"></textarea>
+								<button type="button" class="btn btn-primary" disabled="disabled">Add comment</button>
+							</div>
+						</div>
+					</div> <!-- /.history-inner -->
 				</div>
 			</div> <!-- /.patient.card -->
 		</div>
@@ -193,17 +195,36 @@
 			<div class="row">
 				<div class="col-8 col-offset-4">
 					<div class="btn-group btn-group-justified">
-						<a href="#" id="appeal" class="btn btn-large btn-default"><i class="icon-bolt"></i> Appeal</a>
-						<a href="#" id="snooze" class="btn btn-large btn-default"><i class="icon-time"></i> Snooze</a>
-						<a href="#" id="settle" class="btn btn-large btn-default"><i class="icon-legal"></i> Settle</a>
-						<a href="#" id="reassign" class="btn btn-large btn-default"><i class="icon-user"></i> Reassign</a>
-						<a href="#" id="resubmit" class="btn btn-large btn-default" disabled="disabled"><i class="icon-refresh"></i> Resubmit</a>
+						<a href="#" id="appeal" class="btn btn-large btn-default action"><i class="icon-bolt"></i> Appeal</a>
+						<!-- <a href="#snoozeModal" class="btn btn-large btn-default" data-toggle="modal"><i class="icon-time"></i> Snooze</a> -->
+						<a id="snooze" class="btn btn-large btn-default action"><i class="icon-time"></i> Snooze</a>
+						<a href="#" id="settle" class="btn btn-large btn-default action"><i class="icon-legal"></i> Settle</a>
+						<a href="#" id="reassign" class="btn btn-large btn-default action"><i class="icon-user"></i> Reassign</a>
+						<a href="#" id="resubmit" class="btn btn-large btn-default action" disabled="disabled"><i class="icon-refresh"></i> Resubmit</a>
 					</div>				
 				</div>
 			</div>
 		</div>
 	
 	</div>
+
+	<!-- Modal -->
+	 <div class="modal fade" id="snoozeModal">
+	   <div class="modal-dialog">
+	     <div class="modal-content">
+	       <div class="modal-header">
+	         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	         <h4 class="modal-title"><i class="icon-time"></i> Snooze</h4>
+	       </div>
+	       <div class="modal-body">
+	       		<form class="form-inline">
+			       	 <!-- <button type="button" id="snooze" data-dismiss="modal" class="btn btn-primary pull-right action">Snooze</button> -->
+			         Remind again in <input type="text" class="form-control" value="5" /> days 
+			    </form>
+	       </div>
+	     </div><!-- /.modal-content -->
+	   </div><!-- /.modal-dialog -->
+	 </div><!-- /.modal -->
 
 </div>
 <?php require_once('_footer.php'); ?>

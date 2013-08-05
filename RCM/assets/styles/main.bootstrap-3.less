@@ -171,6 +171,8 @@ h4 {
 	background-color: @primary-bright;
 }
 
+.modal input { width: 50px; }
+
 .panel { 
 	cursor: pointer;
 	padding-bottom: 0; 
@@ -357,12 +359,13 @@ h4 {
 	.date { .text-right; text-transform: uppercase; }
 	.timeline {
 		.text-center;
-		// background: url('../images/timeline.png') center center repeat-y;
 	}
 
 	.history {
 		button { margin-top: 10px; float: right; }
 		.row { padding-bottom: 10px; }
+		.history-inner { background: url('../images/timeline.png') 19.4% top repeat-y; }
+		.today { background-color: @white; }
 	}
 
 	.stamp {

@@ -23,7 +23,9 @@
 
         <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="assets/js/moment.min.js"></script>
+<!--        <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/transition.js"></script>-->
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/tooltip.js"></script>
+        <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/modal.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/dropdown.js"></script>
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/angular.min.js"></script>
@@ -40,7 +42,7 @@
 		</script>
 
         <?php } else { ?>
-        <link rel="stylesheet" href="assets/styles/<?php echo $cssprefix; ?>.bootstrap.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="assets/styles/<?php echo $cssprefix; ?>.bootstrap-3.css" type="text/css" charset="utf-8">
         <?php } ?>
 
 
