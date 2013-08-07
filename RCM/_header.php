@@ -1,5 +1,5 @@
 <?php 
-	$in_dev_mode = 0;      // for production, set $in_dev_mode to '0'
+	$in_dev_mode = 1;      // for production, set $in_dev_mode to '0'
     $cssprefix = 'main';
 
     // Kirby Toolkit. http://toolkit.getkirby.com/
@@ -47,7 +47,7 @@
 
 
     </head>
-    <body>
+    <body id="<?= $id ?>">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -84,9 +84,9 @@
                             <li><a href="#">Later</a></li>
                         </ul>
 
-                        <div class="col-3">
-                            <!-- notification goes here -->
-                        </div>
+                        <ul class="nav nav-pills col-3">
+                            <li class="pull-right"><a href="#" class="dropdown-toggle"><i class="icon-inbox"></i></a></li>
+                        </ul>
                     </div>  <!-- /.row -->
                 </div>
             </div>  <!-- /.subnav -->

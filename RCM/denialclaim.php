@@ -1,4 +1,7 @@
-<?php require_once('_header.php'); ?>	
+<?php 
+	$id = 'denials';
+	require_once('_header.php'); 
+?>
 
 <div class="container" ng-controller="DenialController">
 	<div class="row nocard">
@@ -30,17 +33,17 @@
 
 			<div class="nocard">
 				<div class="meta-info">
-					<i class="icon-home"></i>
+					<i class="icon-home main-icon"></i>
 					<p>
-						<h4>Davenport Medical Clinic</h4>
+						<h4>Davenport Medical Clinic <i class="icon-pencil edit"></i></h4>
 						Group NPI <strong>199457851</strong>
 						<br />EIN <strong>45-584562</strong>
 					</p>
 				</div>
 				<div class="meta-info">
-					<i class="icon-user-md"></i>
+					<i class="icon-user-md main-icon"></i>
 					<p>
-						<h4>Randy Sinnott, DO</h4>
+						<h4>Randy Sinnott, DO <i class="icon-pencil edit"></i></h4>
 						NPI <strong>123456789</strong>
 					</p>
 				</div>
@@ -108,8 +111,8 @@
 					</div> <!-- /.lifecycle -->
 				</div>
 
-				<div class="pad">
-					<h3>Claims</h3>
+				<div class="pad claims">
+					<h3>Claims <i class="icon-pencil edit"></i></h3>
 					<table class="table table-hover">
 						<thead>
 						  <tr>

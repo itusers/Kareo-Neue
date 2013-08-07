@@ -157,6 +157,7 @@ h4 {
 .tooltip-inner {
 	border-radius: 0;
 }
+// .tooltip { border-bottom: none; }
 
 .dropdown {
 	#dropdown-arrow { 
@@ -228,10 +229,14 @@ h4 {
 	margin-top: 15px;
 	padding-left: 20px;
 
-	i { 
+	i.main-icon { 
 		float: left; 
 		margin-left: -18px;
 		margin-top: 2px;
+	}
+
+	&:hover {
+		.show-edit();
 	}
 }
 
@@ -247,10 +252,13 @@ h4 {
 .icon-female { color: #ffb4d6; }
 .icon-male { color: #00cffc; }
 .icon-pencil.edit { 
+	font-size: @default-fontsize;
 	color: @primary; 
 	cursor: pointer;
 	.opacity(0);
 	.transition(opacity 0.2s ease-in-out);
+	position: relative;
+	top: -2px;
 }
 .icon-comment { color: @primary-bright; }
 // .icon-comment {
@@ -339,7 +347,7 @@ h4 {
 	display: none;
 	&.current { display: block; }
 
-	.header:hover {
+	.header:hover, .claims:hover {
 		.show-edit();
 	}
 
