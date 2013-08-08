@@ -67,7 +67,8 @@
                     <div class="row">
                         <ul class="nav nav-pills col-3">
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i id="dropdown-arrow" class="icon-angle-right"></i>
-                                <? if($id=='denials') { ?><i class="icon-list-alt"></i> Claims<? } ?>
+                                <? if($id=='denials') { ?><i class="icon-list-alt"></i> Claims
+                                <? } elseif($id=='encounters') { ?><i class="icon-medkit"></i> Encounters<? } ?>
                                 </a>
                                 <!-- Sidebar -->
                                 <ul class="dropdown-menu">
@@ -88,9 +89,12 @@
                             <li><a href="#">Later <span class="badge">21</span></a></li>
                         </ul>
                         
-                        <? } else { ?>
+                        <? } elseif ($id == 'encounters') { ?>
 
-                        ...
+                        <ul class="nav nav-pills col-7 col-offset-1">
+                            <li class="active"><a href="encounters.php">Draft <span class="badge">109</span></a></li>
+                            <li><a href="#">Approved <span class="badge">58</span></a></li>
+                        </ul>
 
                         <? } ?>
 
