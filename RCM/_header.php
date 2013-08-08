@@ -12,7 +12,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>RCM 2.0</title>
+        <title>RCM 2.0 - <?= $title ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -66,25 +66,35 @@
                 <div class="container">
                     <div class="row">
                         <ul class="nav nav-pills col-3">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i id="dropdown-arrow" class="icon-angle-right"></i><i class="icon-list-alt"></i> Claims </a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i id="dropdown-arrow" class="icon-angle-right"></i>
+                                <? if($id=='denials') { ?><i class="icon-list-alt"></i> Claims<? } ?>
+                                </a>
                                 <!-- Sidebar -->
                                 <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="icon-rocket"></i> Launchpad</a></li>
-                                    <li><a href="#"><i class="icon-medkit"></i> Encounters</a></li>
-                                    <li class="active"><a href="#"><i class="icon-list-alt"></i> Claims</a></li>
+                                    <li<? if($id=='launchpad') echo ' class="active"'; ?>><a href="index.php"><i class="icon-rocket"></i> Launchpad</a></li>
+                                    <li<? if($id=='encounters') echo ' class="active"'; ?>><a href="encounters.php"><i class="icon-medkit"></i> Encounters</a></li>
+                                    <li<? if($id=='denials') echo ' class="active"'; ?>><a href="denials.php"><i class="icon-list-alt"></i> Claims</a></li>
                                     <li><a href="#"><i class="icon-money"></i> Payments</a></li>
                                 </ul>
                             </li>
                         </ul>
 
-                        <ul class="nav nav-pills col-6">
-                            <li><a href="#">Rejected</a></li>
-                            <li class="active"><a href="index.php">Denied</a></li>
-                            <li><a href="#">No Response</a></li>
-                            <li><a href="#">Later</a></li>
+                        <? if ($id == 'denials') { ?>
+                        
+                        <ul class="nav nav-pills col-8">
+                            <li><a href="#">Rejections <span class="badge">36</span></a></li>
+                            <li class="active"><a href="denials.php">Denials <span class="badge">142</span></a></li>
+                            <li><a href="#">No Responses <span class="badge">67</span></a></li>
+                            <li><a href="#">Later <span class="badge">21</span></a></li>
                         </ul>
+                        
+                        <? } else { ?>
 
-                        <ul class="nav nav-pills col-3">
+                        ...
+
+                        <? } ?>
+
+                        <ul class="nav nav-pills col-1">
                             <li class="pull-right"><a href="#" class="dropdown-toggle"><i class="icon-inbox"></i></a></li>
                         </ul>
                     </div>  <!-- /.row -->

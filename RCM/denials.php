@@ -1,4 +1,8 @@
-<?php require_once('_header.php'); ?>
+<?php 
+	$id = 'denials';
+	$title = 'Denials Overview';
+	require_once('_header.php'); 
+?>
 
 <!-- Working through Claim Denials -->
 
