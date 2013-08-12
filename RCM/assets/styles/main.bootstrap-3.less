@@ -175,7 +175,6 @@ h4 {
 .modal input { width: 50px; }
 
 .panel { 
-	cursor: pointer;
 	padding-bottom: 0; 
 	border-radius: 0;
 	margin-bottom: -2px;
@@ -187,57 +186,65 @@ h4 {
 		margin-top: 10px;
 
 		.list-group-flush { display: block; }
+		.panel-footer { display: block; }
 	}
+
+	&.panel-danger h3 { .text-danger; }
 }
 .panel-heading {
+	cursor: pointer;
 	margin-bottom: 0;
-	&:hover { text-decoration: underline; }
+	&:hover { 
+		text-decoration: underline;
+		.show-edit();
+	}
+
+	.info {margin-top: 5px; }
+
+	i { 
+		margin-left: -7px; 
+		&.icon-pencil {
+			margin-left: 0;
+		}
+	}
+
+	h2 { font-size: 24px; }
 }
+.panel-footer { display: none; }
 .list-info { .pull-right; text-align: right; margin-left: 15px; }
 .list-amount { width: 75px; }
 .list-encounters { width: 50px; }
 .list-group-flush {
 	display: none;
 	margin-top: -2px;
+
+	&.pad {
+		padding: 15px;
+		
+		&.pad-left { padding-left: 28px; }
+	}
+
+	&.controls {
+		margin-bottom: 20px;
+		border-bottom: 1px solid @lightergray;
+
+		.col { padding: 10px; }
+
+		.border {
+			border-right: 1px solid @lightergray;
+			padding-left: 30px;
+		}
+	}
 }
 .list-group-item { 
 	padding-right: 15px; 
 	&:hover { text-decoration: underline; }
 }
 
-.card {
-	margin-bottom: 20px; 
-	background-color: @white;
-	border: 1px solid @panel-border;
+.wrapper {
+	background: rgba(99,99,99,0.2);
 	border-radius: @panel-border-radius;
-	.box-shadow(0 1px 1px rgba(0,0,0,.05));
-
-	.pad { padding: 10px 15px };
-	.leftpad { padding-left: 30px; }
-	.top { border-bottom: @border; }
-	.header { padding-top: 20px; }
-
-	&.hide-overflow { overflow-x: hidden; }
-}
-.nocard {
-	padding: 0 15px;
-	color: @brown;
-
-	div, p, h3, h4 { color: @brown; }
-}
-.meta-info {
-	margin-top: 15px;
-	padding-left: 20px;
-
-	i.main-icon { 
-		float: left; 
-		margin-left: -18px;
-		margin-top: 2px;
-	}
-
-	&:hover {
-		.show-edit();
-	}
+	padding: 5px 10px 1px;
 }
 
 .progress {
@@ -252,31 +259,32 @@ h4 {
 .icon-female { color: #ffb4d6; }
 .icon-male { color: #00cffc; }
 .icon-pencil.edit { 
-	font-size: @default-fontsize;
 	color: @primary; 
 	cursor: pointer;
 	.opacity(0);
 	.transition(opacity 0.2s ease-in-out);
-	position: relative;
-	top: -2px;
 }
 .icon-comment { color: @primary-bright; }
-// .icon-comment {
-// 	color: @white;
-// 	text-shadow: 0 1px 1px @black;
-// }
 
 .show-edit() {
 	.icon-pencil.edit { .opacity(100); }
 }
 
-.btn-block { text-align: left; padding-left: 15px; }
-.btn-link { color: @black; }
-.btn-group { margin-top: 20px; margin-bottom: 10px; }
-.actionbar {
-	height: 50px;
-	margin-top: 20px;
+.btn .title {
+	font-size: @small-fontsize;
+	color: @lightgray;
 }
+.btn-link { color: @black; }
+.btn-white {
+	.btn-pseudo-states(@black, @white, @lightergray);
+	&:hover, &:focus {
+		color: @black;
+	}
+}
+
+.bot-10 { margin-bottom: 10px; }
+
+.badge { display: none; }
 
 
 // =========================================================================================================
@@ -349,9 +357,9 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @p
 	display: none;
 	&.current { display: block; }
 
-	.header:hover, .claims:hover {
-		.show-edit();
-	}
+	// .header:hover, .claims:hover {
+	// 	.show-edit();
+	// }
 
 	.lifecycle { 
 		position: relative; 
@@ -372,7 +380,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @p
 	}
 
 	.history {
-		button { margin-top: 10px; float: right; }
+		// button { margin-top: 10px; float: right; }
 		.row { padding-bottom: 10px; }
 		.history-inner { background: url('../images/timeline.png') 19.4% top repeat-y; }
 		.today { background-color: @white; }
