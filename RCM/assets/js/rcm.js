@@ -45,6 +45,15 @@ app.controller('DenialController', function($scope, patientResource) {
 
 	$scope.patients = patientResource.list();
 
+	$scope.selectTag = function(text, classname) {
+		return '<span class="' + classname + '">' + text + '</span>';
+		// if (classname == null) classname = 'btn-warning';
+		// return '<button type="button" class="btn dropdown-toggle ' + classname + '" data-toggle="dropdown">' + text + ' <i class="icon-angle-down"></i></button>';
+	}
+
+	$scope.tag1 = $scope.selectTag('Awaiting EOB');
+	$scope.tag2 = $scope.selectTag('Importance', 'title');
+
 	// transforms YYYYMMDD => M/D/YYYY
 	$scope.prettydate = function(date) {
 		return moment(date, 'YYYYMMDD').format('l')

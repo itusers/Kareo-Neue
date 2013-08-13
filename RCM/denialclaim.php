@@ -60,44 +60,29 @@
 						</div>
 						<div class="list-group-flush controls">
 							<div class="row">
-								<div class="col col-4 border">
-									<div class="descriptor">Assigned to</div>
-									<div class="btn-group">
-										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">Abe Yang (Biller) <i class="icon-angle-down"></i></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Abe Yang (Biller)</a></li>
-											<li><a href="#">Mitch Malone (Biller)</a></li>
-											<li><a href="#">Patrick Bartenstein (Biller)</a></li>
-											<li><a href="#">Neil Chopra (Office Manager)</a></li>
-											<li><a href="#">Dr. Savan Kong (Provider)</a></li>
-											<li><a href="#">Dr. Randy Sinnott (Provider)</a></li>
-											<li><a href="#">Dr. Tom Giannulli (Provider)</a></li>
-										</ul>	
-									</div> <!-- /.btn-group -->
-								</div>
-								<div class="col col-8">
+								<div class="col-12 pad">
 									<div class="descriptor">Labels</div>
 									
 									<div class="btn-group">
-										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">Awaiting EOB <i class="icon-angle-down"></i></button>
+										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag1"></span> <i class="icon-angle-down"></i></button>
 										<ul class="dropdown-menu">
 											<li class="dropdown-header">Custom Status</li>
-											<li><a href="#">Awaiting EOB</a></li>
-											<li><a href="#">To Appeal</a></li>
-											<li><a href="#">Appealed</a></li>
-											<li><a href="#">Support Docs Needed</a></li>
-											<li><a href="#">None</a></li>
+											<li><a ng-click="tag1 = 'Awaiting EOB'">Awaiting EOB</a></li>
+											<li><a ng-click="tag1 = 'To Appeal'">To Appeal</a></li>
+											<li><a ng-click="tag1 = 'Appealed'">Appealed</a></li>
+											<li><a ng-click="tag1 = 'Support Docs Needed'">Support Docs Needed</a></li>
+											<li><a ng-click="tag1 = selectTag('Custom Status', 'title')">None</a></li>
 										</ul>	
 									</div> <!-- /.btn-group -->
 
 									<div class="btn-group">
-										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><span class="title">Importance</span> <i class="icon-angle-down"></i></button>
+										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag2"></span> <i class="icon-angle-down"></i></button>
 										<ul class="dropdown-menu">
 											<li class="dropdown-header">Importance</li>
-											<li><a href="#">High</a></li>
-											<li><a href="#">Medium</a></li>
-											<li><a href="#">Low</a></li>
-											<li><a href="#">None</a></li>
+											<li><a ng-click="tag2 = 'High'">High</a></li>
+											<li><a ng-click="tag2 = 'Medium'">Medium</a></li>
+											<li><a ng-click="tag2 = 'Low'">Low</a></li>
+											<li><a ng-click="tag2 = selectTag('Importance', 'title')">None</a></li>
 										</ul>	
 									</div> <!-- /.btn-group -->
 								</div>
@@ -199,35 +184,11 @@
 									<div class="col-1 timeline"><i class="icon-comment"></i></div>
 									<div class="col-9">
 										<textarea class="form-control" rows="2" placeholder="Write a comment"></textarea>
+										<button type="button" class="btn btn-primary">Comment</button>
 									</div>
 								</div>
 							</div> <!-- /.history-inner -->
 
-						</div>
-						<div class="panel-footer">
-							<div class="btn-group pull-right">
-								<button type="button" class="btn btn-primary">Comment</button>
-							</div>
-							
-							<div class="btn-group">
-								<button type="button" class="btn btn-default">Appeal</button>	
-								<button type="button" class="btn btn-default">Settle</button>
-								<div class="btn-group">
-								    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-										Snooze
-										<i class="icon-angle-down"></i>
-								    </button>
-								    <ul class="dropdown-menu">
-										<li><a href="#">1 day</a></li>
-										<li><a href="#">2 days</a></li>
-										<li><a href="#">3 days</a></li>
-										<li><a href="#">4 days</a></li>
-										<li><a href="#">5 days</a></li>
-										<li><a href="#">10 days</a></li>
-										<li><a href="#">15 days</a></li>
-								    </ul>
-								</div>	
-							</div>
 						</div>
 					</div> <!-- /.panel -->
 
@@ -235,6 +196,7 @@
 			</div>
 		</section>
 
+		<!-- <aside class="col-4" data-spy="affix" data-offset-top="90"> -->
 		<aside class="col-4">
 			<div class="panel panel-danger bot-10 open">
 				<div class="panel-heading">
@@ -284,23 +246,23 @@
 		</aside>
 	</div>
 
-<!-- 	<div class="navbar navbar-fixed-bottom">
+	<div class="navbar navbar-fixed-bottom">
 		<div class="container">
 			<div class="row">
 				<div class="col-8">
-					<div class="btn-group btn-group-justified">
+					<div id="denial-actions" class="btn-group btn-group-justified">
 						<a href="#" id="appeal" class="btn btn-large btn-default action"><i class="icon-bolt"></i> Appeal</a>
 						<a id="snooze" class="btn btn-large btn-default action"><i class="icon-time"></i> Snooze</a>
 						<a href="#" id="settle" class="btn btn-large btn-default action"><i class="icon-legal"></i> Settle</a>
 						<a href="#" id="reassign" class="btn btn-large btn-default action"><i class="icon-user"></i> Reassign</a>
-						<a href="#" id="resubmit" class="btn btn-large btn-default action" disabled="disabled"><i class="icon-refresh"></i> Resubmit</a>
+						<a href="#" id="resubmit" class="btn btn-large btn-default action"><i class="icon-refresh"></i> Resubmit</a>
 					</div>				
 				</div>
 			</div>
 		</div>
 	
 	</div>
- -->
+
 
 </div>
 <?php require_once('_footer.php'); ?>

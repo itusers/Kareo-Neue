@@ -227,11 +227,10 @@ h4 {
 	&.controls {
 		margin-bottom: 20px;
 		border-bottom: 1px solid @lightergray;
+		// .alert-variant(@alert-info-bg, @lightergray, @black);
 
-		.col { padding: 10px; }
-
-		.border {
-			border-right: 1px solid @lightergray;
+		.pad { 
+			padding: 10px; 
 			padding-left: 30px;
 		}
 	}
@@ -285,6 +284,8 @@ h4 {
 .bot-10 { margin-bottom: 10px; }
 
 .badge { display: none; }
+
+.affix { right: 0; }
 
 
 // =========================================================================================================
@@ -342,6 +343,11 @@ h4 {
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @primary; }
 .nav a { color: @black; }
 
+#denial-actions {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
 .descriptor {
 	color: @lightgray;
 	text-transform: uppercase;
@@ -380,7 +386,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @p
 	}
 
 	.history {
-		// button { margin-top: 10px; float: right; }
+		button { margin-top: 10px; float: right; }
 		.row { padding-bottom: 10px; }
 		.history-inner { background: url('../images/timeline.png') 19.4% top repeat-y; }
 		.today { background-color: @white; }

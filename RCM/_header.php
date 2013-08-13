@@ -27,6 +27,7 @@
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/tooltip.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/modal.js"></script>
         <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/dropdown.js"></script>
+<!--        <script type="text/javascript" src="assets/bootstrap-3.0.0-wip/js/affix.js"></script>-->
         <script type="text/javascript" src="assets/js/underscore-min.js"></script>
         <script type="text/javascript" src="assets/js/angular.min.js"></script>
         <script type="text/javascript" src="assets/js/rcm.js"></script>
