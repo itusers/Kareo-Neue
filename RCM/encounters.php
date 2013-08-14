@@ -50,10 +50,11 @@
 							</h2>
 						</div>
 
+						<div class="alert alert-warning alert-flush">
+							<i class="icon-warning-sign"></i> <strong>Code Check</strong> The Diagnosis Code(s) submitted with the Procedure Code (98941) does not meet or may not fully support Medical Necessity. 
+						</div>
+
 						<div class="list-group-flush pad claims">
-							<div class="alert alert-warning">
-								<strong>Code Check</strong> The Diagnosis Code(s) submitted with the Procedure Code (98941) does not meet or may not fully support Medical Necessity. 
-							</div>
 
 							<h3>Claims <i class="icon-pencil edit"></i></h3>
 							<table class="table table-hover">
@@ -98,14 +99,15 @@
 						<i class="icon-building"></i> Aetna Health
 					</h3>
 				</div>
-				<div class="list-group-flush pad pad-left">
-					<div class="alert alert-danger">
-						<strong>Payer Address</strong> is missing
+				<div class="list-group-flush">
+					<div class="alert alert-danger alert-flush">
+						<i class="icon-exclamation-sign"></i> <strong>Payer Address</strong> is missing
 					</div>
-
-					<span class="text-danger">Address</span>
-					<br />EDI Payer # <strong>234234 (Capario)</strong>
-					<br />Group # <strong>AD90543</strong>
+					<div class="pad pad-left">
+						<span class="text-danger">Address</span>
+						<br />EDI Payer # <strong>234234 (Capario)</strong>
+						<br />Group # <strong>AD90543</strong>
+					</div>
 				</div>
 			</div>
 
@@ -116,12 +118,15 @@
 						<i class="icon-home"></i> Davenport Medical Clinic
 					</h3>
 				</div>
-				<div class="list-group-flush pad pad-left">
-					<div class="alert alert-danger">
-						<strong>Rendering location</strong> is missing
+				<div class="list-group-flush">
+					<div class="alert alert-danger alert-flush">
+						<i class="icon-exclamation-sign"></i> <strong>Rendering location</strong> is missing
 					</div>
-
-					<span class="text-danger">Rendering Location</span>
+					<div class="pad pad-left">
+						<span class="text-danger">Rendering Location</span>
+						<br />Group NPI <strong>199457851</strong>
+						<br />EIN <strong>45-584562</strong>
+					</div>
 				</div>
 			</div>
 

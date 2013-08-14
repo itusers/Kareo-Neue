@@ -54,6 +54,13 @@
 								<i class="icon-medkit"></i> Encounter #2507
 							</h2>
 						</div>
+
+						<div class="list-group-flush">
+							<div class="alert alert-warning alert-flush">
+								<i class="icon-warning-sign"></i> <strong>15 days left</strong> until estimated filing deadline
+							</div>	
+						</div>
+						
 						<div class="list-group-flush controls">
 							<div class="row">
 								<div class="col-12 pad">
@@ -83,11 +90,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="list-group-flush pad">
-							<div class="alert alert-warning">
-								<strong>15 days left</strong> until estimated filing deadline
-							</div>	
 
+						<div class="list-group-flush pad">
 							<div class="lifecycle">
 								<!-- DOS -->
 								<i class="icon-circle text-muted" style="left: 0%;" data-toggle="tooltip" title="<strong>Date of Service</strong> {{prettydate(patient.dos)}}"></i>

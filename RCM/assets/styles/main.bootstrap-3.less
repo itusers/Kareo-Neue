@@ -220,7 +220,7 @@ h4 {
 .list-group-flush {
 	display: none;
 
-	&.pad {
+	.pad, &.pad {
 		padding: 15px;
 		
 		&.pad-left { padding-left: 28px; }
@@ -287,6 +287,13 @@ h4 {
 .affix { right: 0; }
 
 select.form-control { color: @black; }
+
+.alert.alert-flush {
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+	margin-bottom: 0;
+}
 
 
 // =========================================================================================================
