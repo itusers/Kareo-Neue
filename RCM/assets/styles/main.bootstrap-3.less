@@ -56,7 +56,6 @@
 @import "../bootstrap-3.0.0-wip/less/labels.less";
 @import "../bootstrap-3.0.0-wip/less/badges.less";
 @import "../bootstrap-3.0.0-wip/less/progress-bars.less";
-@import "../bootstrap-3.0.0-wip/less/accordion.less";
 @import "../bootstrap-3.0.0-wip/less/carousel.less";
 @import "../bootstrap-3.0.0-wip/less/jumbotron.less";
 
@@ -75,6 +74,8 @@
 // Colors
 
 @black: #222;
+@darkergray: #444;
+@darkgray: #666;
 @gray: #999;
 @lightgray: #bbb;
 @lightergray: #eee;
@@ -178,12 +179,10 @@ h4 {
 .modal input { width: 50px; }
 
 .panel { 
-	padding-bottom: 0; 
 	border-radius: 0;
 	margin-bottom: -2px;
 
 	&.open { 
-		padding-bottom: 15px;
 		border-radius: @panel-border-radius; 
 		margin-bottom: 10px;
 		margin-top: 10px;
@@ -192,8 +191,8 @@ h4 {
 		.panel-footer { display: block; }
 	}
 
-	&.panel-danger h3 { .text-danger; }
-	&.panel-warning h2 { .text-warning; }
+	// &.panel-danger h3 { .text-danger; }
+	// &.panel-warning h2 { .text-warning; }
 }
 .panel-heading {
 	cursor: pointer;
@@ -220,7 +219,6 @@ h4 {
 .list-encounters { width: 50px; }
 .list-group-flush {
 	display: none;
-	margin-top: -2px;
 
 	&.pad {
 		padding: 15px;
@@ -240,6 +238,7 @@ h4 {
 }
 .list-group-item { 
 	padding-right: 15px; 
+	cursor: pointer;
 	&:hover { text-decoration: underline; }
 }
 
@@ -277,11 +276,8 @@ h4 {
 	color: @lightgray;
 }
 .btn-link { color: @black; }
-.btn-white {
-	.btn-pseudo-states(@black, @white, @lightergray);
-	&:hover, &:focus {
-		color: @black;
-	}
+.btn-inverse {
+	 .button-variant(@white, @darkergray, @black);
 }
 
 .bot-10 { margin-bottom: 10px; }
@@ -367,10 +363,6 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @p
 
 	display: none;
 	&.current { display: block; }
-
-	// .header:hover, .claims:hover {
-	// 	.show-edit();
-	// }
 
 	.lifecycle { 
 		position: relative; 

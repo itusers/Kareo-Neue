@@ -122,8 +122,6 @@
 					</div>
 
 					<span class="text-danger">Rendering Location</span>
-					<!-- <br />Group NPI <strong>199457851</strong>
-					<br />EIN <strong>45-584562</strong> -->
 				</div>
 			</div>
 
@@ -145,9 +143,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-8">
-					<div class="btn-group btn-group-justified">
-						<a href="#" id="approve" class="btn btn-large btn-default action"><i class="icon-thumbs-up"></i> Approve</a>
-						<a href="#" id="reassign" class="btn btn-large btn-default action"><i class="icon-user"></i> Reassign</a>
+					<div class="btn-group btn-group-lg btn-group-justified">
+						<a href="#" id="approve" class="btn btn-inverse action"><i class="icon-thumbs-up"></i> Approve</a>
+						<a href="#" id="reassign" class="btn btn-inverse action"><i class="icon-user"></i> Reassign</a>
 					</div>				
 				</div>
 			</div>

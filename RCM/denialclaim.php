@@ -60,7 +60,7 @@
 									<div class="descriptor">Labels</div>
 									
 									<div class="btn-group">
-										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag1"></span> <i class="icon-angle-down"></i></button>
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag1"></span> <i class="icon-angle-down"></i></button>
 										<ul class="dropdown-menu">
 											<li class="dropdown-header">Custom Status</li>
 											<li><a ng-click="tag1 = 'Awaiting EOB'">Awaiting EOB</a></li>
@@ -71,7 +71,7 @@
 									</div> <!-- /.btn-group -->
 
 									<div class="btn-group">
-										<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag2"></span> <i class="icon-angle-down"></i></button>
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span ng-bind-html-unsafe="tag2"></span> <i class="icon-angle-down"></i></button>
 										<ul class="dropdown-menu">
 											<li class="dropdown-header">Importance</li>
 											<li><a ng-click="tag2 = 'High'">High</a></li>
@@ -87,7 +87,7 @@
 							<div class="alert alert-warning">
 								<strong>15 days left</strong> until estimated filing deadline
 							</div>	
-							
+
 							<div class="lifecycle">
 								<!-- DOS -->
 								<i class="icon-circle text-muted" style="left: 0%;" data-toggle="tooltip" title="<strong>Date of Service</strong> {{prettydate(patient.dos)}}"></i>
@@ -250,12 +250,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-8">
-					<div id="denial-actions" class="btn-group btn-group-justified">
-						<a href="#" id="appeal" class="btn btn-large btn-default action"><i class="icon-bolt"></i> Appeal</a>
-						<a id="snooze" class="btn btn-large btn-default action"><i class="icon-time"></i> Snooze</a>
-						<a href="#" id="settle" class="btn btn-large btn-default action"><i class="icon-legal"></i> Settle</a>
-						<a href="#" id="reassign" class="btn btn-large btn-default action"><i class="icon-user"></i> Reassign</a>
-						<a href="#" id="resubmit" class="btn btn-large btn-default action"><i class="icon-refresh"></i> Resubmit</a>
+					<div id="denial-actions" class="btn-group btn-group-lg btn-group-justified">
+						<a href="#" id="appeal" class="btn btn-inverse action"><i class="icon-bolt"></i> Appeal</a>
+						<a id="snooze" class="btn btn-inverse action"><i class="icon-time"></i> Snooze</a>
+						<a href="#" id="settle" class="btn btn-inverse action"><i class="icon-legal"></i> Settle</a>
+						<a href="#" id="reassign" class="btn btn-inverse action"><i class="icon-user"></i> Reassign</a>
+						<a href="#" id="resubmit" class="btn btn-inverse action"><i class="icon-refresh"></i> Resubmit</a>
 					</div>				
 				</div>
 			</div>

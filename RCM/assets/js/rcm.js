@@ -233,9 +233,11 @@ $(document).ready(function() {
 		var panel = $(this).parent();
 		if (panel.hasClass('open')) {
 			panel.removeClass('open');
+			if ($('#overview').length) panel.removeClass('panel-info');
 		}
 		else {
 			panel.addClass('open');
+			if ($('#overview').length) panel.addClass('panel-info');
 		}
 	});
 
