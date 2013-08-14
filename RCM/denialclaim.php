@@ -7,6 +7,12 @@
 <div class="container" ng-controller="DenialController">
 
 	<div class="row">
+		<div class="col-12">
+			<div class="alert alert-warning">
+				<strong>15 days left</strong> until estimated filing deadline
+			</div>			
+		</div>
+
 		<section class="col-8">	
 			<div ng-repeat="patient in patients">
 				<div ng-class="{current: $first }" class="patient wrapper">
@@ -50,11 +56,7 @@
 					<div class="panel bot-10 open">
 						<div class="panel-heading">
 							<h2 class="panel-title">
-								<div class="pull-right info text-warning">
-									<strong>15 days left</strong> until estimated filing deadline 
-									<i class="icon-pencil edit"></i>
-								</div>
-								
+								<i class="icon-pencil edit pull-right"></i>
 								<i class="icon-medkit"></i> Encounter #2507
 							</h2>
 						</div>
@@ -198,7 +200,7 @@
 
 		<!-- <aside class="col-4" data-spy="affix" data-offset-top="90"> -->
 		<aside class="col-4">
-			<div class="panel panel-danger bot-10 open">
+			<div class="panel bot-10 open">
 				<div class="panel-heading">
 					<h3 class="panel-title"><i class="icon-exclamation-sign"></i> CO-140</h3>
 				</div>

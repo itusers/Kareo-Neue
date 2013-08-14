@@ -78,10 +78,10 @@ app.factory('patientResource', function () {
 	// make life easier by using ../dummy-json/index.html
 
 	var data = [
-		{id:1,first:"Stacey",last:"Davis",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130703"},
-		{id:2,first:"Gregorio",last:"Harris",gender:'male',dob:"19770323",ssn:"455-345-1099",policy:"FACIL156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130623"},
-		{id:3,first:"Nichelle",last:"Truong",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20121107"},
-		{id:4,first:"Terry",last:"Toner",gender:'male',dob:"19560605",ssn:"345-123-8765",policy:"LOFAL231568",group:"226630001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130723"}
+		{id:1,first:"Stacey",last:"Davis",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130703",address:"1234 Fake St., Irvine, CA 92602"},
+		{id:2,first:"Gregorio",last:"Harris",gender:'male',dob:"19770323",ssn:"455-345-1099",policy:"FACIL156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130623",address:"1234 Fake St., Irvine, CA 92602"},
+		{id:3,first:"Nichelle",last:"Truong",gender:'female',dob:"19800520",ssn:"552-455-3451",policy:"HLFAN156832",group:"002230001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20121107",address:"1234 Fake St., Irvine, CA 92602"},
+		{id:4,first:"Terry",last:"Toner",gender:'male',dob:"19560605",ssn:"345-123-8765",policy:"LOFAL231568",group:"226630001",practice_id:5,provider_id:1,lifecycle_id:1,dos:"20130723",address:"1234 Fake St., Irvine, CA 92602"}
 	];
 		
 	return {
