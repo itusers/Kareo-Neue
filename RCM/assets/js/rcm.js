@@ -182,7 +182,10 @@ app.factory('remarkResource', function () {
 		{id:6,code:"N-170",desc:"A new/revised/renewed certificate of medical necessity is needed",amount:"$1200",enc:114},
 		{id:7,code:"N-591",desc:"Payment based on an Independent Medical Examination (IME) or Utilization Review (UR)",amount:"$800",enc:35},
 		{id:8,code:"M-32",desc:"This is a conditional payment made pending a decision on this service by the patient's primary payer. This payment may be subject to refund upon your receipt of any additional payment for this service from another payer. You must contact this office immediately upon receipt of an additional payment for this service.",amount:"$650",enc:12},
-		{id:9,code:"M-60",desc:"Missing Certificate of Medical Necessity",amount:"$550",enc:16}]
+		{id:9,code:"M-60",desc:"Missing Certificate of Medical Necessity",amount:"$550",enc:16},
+		{id:10,code:"CO-16",desc:"Claim/service lacks information which is needed for adjudication. Additional information is supplied using remittance advice remarks codes whenever appropriate.",amount:"$510",enc:23},
+		{id:11,code:"N-324",desc:"Missing/incomplete/invalid last seen/visit date.",amount:"$475",enc:31},
+		{id:12,code:"N-286",desc:"Missing/incomplete/invalid referring provider primary identifier.",amount:"$425",enc:10}]
 	
 	return {
 		list: function() {
@@ -251,21 +254,16 @@ $(document).ready(function() {
 		var id = btn.attr('id');
 		var stamp = $('.current .stamp-' + id);
 		var patient = stamp.parent();
-
-		// for modal -- not ready for prime time yet
-		// if (id == 'snooze') {
-		// 	var val = btn.parent().find('input').val();
-		// 	$('.current .stamp-' + id + ' .val').html(val);
-		// }
 		
 		// massive chaining: 
 		// show relevant stamp -> delay -> swipe current patient away + show next patient 
 		// -> swap meta info (provider + practice)
 		stamp.show().addClass('animated bounceIn').delay(700).queue(function(nxt) {
 			patient.addClass('animated fadeOutLeft');
+			$('#currentcount').html(parseInt($('#currentcount').html()) - 1);	// -1 current counter based on action
+			if (id=='approve') $('#nextcount').html(parseInt($('#nextcount').html()) + 1);			// +1 next counter based on action
 			nxt();
 		}).delay(300).queue(function(nxt) {
-			//patient.removeClass('current').next().addClass('animated fadeInRight current');
 			patient.removeClass('current').parent().next().children().addClass('animated fadeInRight current');
 			nxt();
 		});

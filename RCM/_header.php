@@ -93,8 +93,8 @@
                         <? } elseif ($id == 'encounters') { ?>
 
                         <ul class="nav nav-pills col-7 col-offset-1">
-                            <li class="active"><a href="encounters.php">Draft <span class="badge">109</span></a></li>
-                            <li><a href="#">Approved <span class="badge">58</span></a></li>
+                            <li class="active"><a href="encounters.php">Draft <span id="currentcount" class="badge">109</span></a></li>
+                            <li><a href="#">Approved <span id="nextcount" class="badge">58</span></a></li>
                         </ul>
 
                         <? } ?>

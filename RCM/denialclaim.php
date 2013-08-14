@@ -7,12 +7,6 @@
 <div class="container" ng-controller="DenialController">
 
 	<div class="row">
-		<div class="col-12">
-			<div class="alert alert-warning">
-				<strong>15 days left</strong> until estimated filing deadline
-			</div>			
-		</div>
-
 		<section class="col-8">	
 			<div ng-repeat="patient in patients">
 				<div ng-class="{current: $first }" class="patient wrapper">
@@ -42,11 +36,11 @@
 							</h2>
 						</div>
 						<div class="list-group-flush pad pad-left row">
-							<div class="col-6 smalltext">
+							<div class="col-6">
 								DOB <strong>{{prettydate(patient.dob)}}</strong>
 								<br />SSN <strong>{{patient.ssn}}</strong>
 							</div>
-							<div class="col-6 smalltext">
+							<div class="col-6">
 								Policy # <strong>{{patient.policy}}</strong>
 								<br />Group # <strong>{{patient.group}}</strong>
 							</div>
@@ -71,7 +65,6 @@
 											<li class="dropdown-header">Custom Status</li>
 											<li><a ng-click="tag1 = 'Awaiting EOB'">Awaiting EOB</a></li>
 											<li><a ng-click="tag1 = 'To Appeal'">To Appeal</a></li>
-											<li><a ng-click="tag1 = 'Appealed'">Appealed</a></li>
 											<li><a ng-click="tag1 = 'Support Docs Needed'">Support Docs Needed</a></li>
 											<li><a ng-click="tag1 = selectTag('Custom Status', 'title')">None</a></li>
 										</ul>	
@@ -91,6 +84,10 @@
 							</div>
 						</div>
 						<div class="list-group-flush pad">
+							<div class="alert alert-warning">
+								<strong>15 days left</strong> until estimated filing deadline
+							</div>	
+							
 							<div class="lifecycle">
 								<!-- DOS -->
 								<i class="icon-circle text-muted" style="left: 0%;" data-toggle="tooltip" title="<strong>Date of Service</strong> {{prettydate(patient.dos)}}"></i>
@@ -202,6 +199,7 @@
 		<aside class="col-4">
 			<div class="panel bot-10 open">
 				<div class="panel-heading">
+					<span id="currentcount" class="badge pull-right">120</span>
 					<h3 class="panel-title"><i class="icon-exclamation-sign"></i> CO-140</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">

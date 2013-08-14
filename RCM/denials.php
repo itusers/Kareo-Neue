@@ -10,6 +10,20 @@
 
 	<div class="row">
 		<aside class="col-3">
+			<div class="descriptor pad">Show claims from</div>
+
+			<select class="form-control">
+				<option>All your practices</option>
+				<option ng-repeat="practice in practices">{{ practice.name }}</option>
+			</select>
+
+<!-- 			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">All your practices</a></li>
+				<li ng-repeat="practice in practices"><a href="#">{{ practice.name }}</a></li>
+			</ul> -->
+
+			<hr />
+
 			<div class="descriptor pad">Group by</div>
 			
 			<ul class="nav nav-pills nav-stacked">
@@ -19,12 +33,31 @@
 
 			<hr />
 
-			<div class="descriptor pad">Show claims from</div>
-
+			<div class="descriptor pad">Sort by</div>
+			
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="#">All your practices</a></li>
-				<li ng-repeat="practice in practices"><a href="#">{{ practice.name }}</a></li>
+				<li class="active"><a href="#">Highest dollar amount</a></li>
+				<li><a href="#">Most outstanding claims</a></li>
+				<li><a href="#">Nearest filing deadline</a></li>
 			</ul>
+
+			<hr />
+
+			<div class="descriptor pad">Filter by</div>
+			
+			<select class="form-control">
+				<option>All Custom Status Tags</option>
+				<option>Awaiting EOB</option>
+				<option>To Appeal</option>
+				<option>Support Docs Needed</option>
+			</select>
+			<br />
+			<select class="form-control">
+				<option>All Importance Tags</option>
+				<option>High</option>
+				<option>Medium</option>
+				<option>Low</option>
+			</select>
 
 		</aside>
 		

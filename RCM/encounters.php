@@ -8,15 +8,11 @@
 
 <!-- <div class="container" ng-controller="DraftEncountersController"> -->
 <div class="container" ng-controller="DenialController">
+	<div class="alert alert-danger text-center">
+		<span class="text-danger">2 Errors</span>, <span class="text-warning">1 Warning</span>
+	</div>
 
 	<div class="row">
-		<div class="col-12">
-			<div class="alert alert-danger">
-				<strong>Payer Address</strong> is missing
-				<br /><strong>Rendering location</strong> is missing
-			</div>			
-		</div>
-		
 		<section class="col-8">	
 			<div ng-repeat="patient in patients">
 				<div ng-class="{current: $first }" class="patient wrapper">
@@ -36,11 +32,11 @@
 							</h2>
 						</div>
 						<div class="list-group-flush pad pad-left row">
-							<div class="col-6 smalltext">
+							<div class="col-6">
 								DOB <strong>{{prettydate(patient.dob)}}</strong>
 								<br />Address <strong>{{patient.address}}</strong>
 							</div>
-							<div class="col-6 smalltext">
+							<div class="col-6">
 								Policy # <strong>{{patient.policy}}</strong>
 								<br />Group # <strong>{{patient.group}}</strong>
 							</div>
@@ -55,6 +51,10 @@
 						</div>
 
 						<div class="list-group-flush pad claims">
+							<div class="alert alert-warning">
+								<strong>Code Check</strong> The Diagnosis Code(s) submitted with the Procedure Code (98941) does not meet or may not fully support Medical Necessity. 
+							</div>
+
 							<h3>Claims <i class="icon-pencil edit"></i></h3>
 							<table class="table table-hover">
 								<thead>
@@ -76,7 +76,7 @@
 								  </tr>
 								  <tr>
 								    <td>{{prettydate(patient.dos)}}</td>
-								    <td>36415</td>
+								    <td class="text-warning">98941</td>
 								    <td>&nbsp;</td>
 								    <td>V25.09</td>
 								    <td>$257.00</td>
@@ -91,7 +91,7 @@
 		</section>
 
 		<aside class="col-4">
-			<div class="panel bot-10 open panel-danger">
+			<div class="panel bot-10 open">
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						<i class="icon-pencil edit pull-right"></i>
@@ -99,13 +99,17 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					Address <em class="text-danger">Missing</em>
+					<div class="alert alert-danger">
+						<strong>Payer Address</strong> is missing
+					</div>
+
+					<span class="text-danger">Address</span>
 					<br />EDI Payer # <strong>234234 (Capario)</strong>
 					<br />Group # <strong>AD90543</strong>
 				</div>
 			</div>
 
-			<div class="panel bot-10 open panel-danger">
+			<div class="panel bot-10 open">
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						<i class="icon-pencil edit pull-right"></i>
@@ -113,7 +117,11 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					Rendering Location <em class="text-danger">Missing</em>
+					<div class="alert alert-danger">
+						<strong>Rendering location</strong> is missing
+					</div>
+
+					<span class="text-danger">Rendering Location</span>
 					<!-- <br />Group NPI <strong>199457851</strong>
 					<br />EIN <strong>45-584562</strong> -->
 				</div>

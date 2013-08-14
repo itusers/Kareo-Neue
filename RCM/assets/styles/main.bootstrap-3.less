@@ -84,6 +84,8 @@
 @offwhite: #FCFBF0;
 @lightbrown: #CBC2B8;
 @brown: #AF9172;
+@blue: #0090ff;
+@lightblue: lighten(#0090ff, 45);
 
 @primary: #DB9141;
 @primary-bright: #E4B036;
@@ -137,7 +139,7 @@ body {
 	// padding-top: 130px; 
 	padding-bottom: 40px;
 	background-color: @offwhite;
-	// background-color: @lightestgray;
+	// background-color: @lightblue;
 }
 
 h2 {
@@ -191,6 +193,7 @@ h4 {
 	}
 
 	&.panel-danger h3 { .text-danger; }
+	&.panel-warning h2 { .text-warning; }
 }
 .panel-heading {
 	cursor: pointer;
@@ -228,7 +231,6 @@ h4 {
 	&.controls {
 		margin-bottom: 20px;
 		border-bottom: 1px solid @lightergray;
-		// .alert-variant(@alert-info-bg, @lightergray, @black);
 
 		.pad { 
 			padding: 10px; 
@@ -284,9 +286,11 @@ h4 {
 
 .bot-10 { margin-bottom: 10px; }
 
-// .badge { display: none; }
+#denials .navbar .badge { display: none; }
 
 .affix { right: 0; }
+
+select.form-control { color: @black; }
 
 
 // =========================================================================================================
@@ -422,6 +426,9 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @p
 			border-color: @state-info-text;
 		}
 	}
+}
+#encounters .patient .stamp {
+	top: 125px;
 }
 
 
