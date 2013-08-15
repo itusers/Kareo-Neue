@@ -141,6 +141,7 @@ body {
 	padding-bottom: 40px;
 	background-color: @offwhite;
 	// background-color: @lightblue;
+	// background-color: @lightestgray;
 }
 
 h2 {
@@ -191,12 +192,14 @@ h4 {
 		.panel-footer { display: block; }
 	}
 
-	// &.panel-danger h3 { .text-danger; }
-	// &.panel-warning h2 { .text-warning; }
+	&.panel-danger h3 { .text-danger; }
+	&.panel-warning h2 { .text-warning; }
 }
 .panel-heading {
 	cursor: pointer;
+	border-radius: 0;
 	margin-bottom: 0;
+
 	&:hover { 
 		text-decoration: underline;
 		.show-edit();
@@ -213,14 +216,19 @@ h4 {
 
 	h2 { font-size: 24px; }
 }
+.open .panel-heading { .border-top-radius(@panel-border-radius - 1); }
 .panel-footer { display: none; }
+.panel-kareo {
+	.panel-variant(@primary; @white; @primary-bright; @primary);
+	h3 { color: @white; }
+}
 .list-info { .pull-right; text-align: right; margin-left: 15px; }
 .list-amount { width: 75px; }
 .list-encounters { width: 50px; }
 .list-group-flush {
 	display: none;
 
-	.pad, &.pad {
+	&.pad {
 		padding: 15px;
 		
 		&.pad-left { padding-left: 28px; }
@@ -243,9 +251,10 @@ h4 {
 }
 
 .wrapper {
-	background: rgba(99,99,99,0.2);
-	border-radius: @panel-border-radius;
-	padding: 5px 10px 1px;
+	// background: rgba(99,99,99,0.2);
+	// border: 1px solid @lightbrown;
+	// border-radius: @panel-border-radius;
+	// padding: 5px 10px 1px;
 }
 
 .progress {
@@ -282,7 +291,7 @@ h4 {
 
 .bot-10 { margin-bottom: 10px; }
 
-#denials .navbar .badge { display: none; }
+// #denials .navbar .badge { display: none; }
 
 .affix { right: 0; }
 
@@ -347,7 +356,13 @@ select.form-control { color: @black; }
 	
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus { background-color: @primary-bright; }
-.nav-pills > li > a > .badge { margin-top: -3px; }
+.badge { 
+	position: relative; 
+	top: -2px; 
+
+	&.badge-warning { background-color: @brand-warning; color: @white; }
+	&.badge-error { background-color: @brand-danger; color: @white; }
+}
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge { color: @primary; }
 .nav a { color: @black; }
 

@@ -84,17 +84,17 @@
                         <? if ($id == 'denials') { ?>
                         
                         <ul class="nav nav-pills col-8">
-                            <li><a href="#">Rejections <span class="badge">36</span></a></li>
-                            <li class="active"><a href="denials.php">Denials <span class="badge">142</span></a></li>
-                            <li><a href="#">No Responses <span class="badge">67</span></a></li>
-                            <li><a href="#">Later <span class="badge">21</span></a></li>
+                            <li><a href="#">Rejections</a></li>
+                            <li class="active"><a href="denials.php">Denials <span id="currentcount" class="badge">342</span></a></li>
+                            <li><a href="#">No Responses</a></li>
+                            <li><a href="#">Later</a></li>
                         </ul>
                         
                         <? } elseif ($id == 'encounters') { ?>
 
                         <ul class="nav nav-pills col-7 col-offset-1">
                             <li class="active"><a href="encounters.php">Draft <span id="currentcount" class="badge">109</span></a></li>
-                            <li><a href="#">Approved <span id="nextcount" class="badge">58</span></a></li>
+                            <li><a href="#">Approved</span></a></li>
                         </ul>
 
                         <? } ?>

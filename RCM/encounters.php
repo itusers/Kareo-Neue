@@ -8,9 +8,6 @@
 
 <!-- <div class="container" ng-controller="DraftEncountersController"> -->
 <div class="container" ng-controller="DenialController">
-	<div class="alert alert-danger text-center">
-		<span class="text-danger">2 Errors</span>, <span class="text-warning">1 Warning</span>
-	</div>
 
 	<div class="row">
 		<section class="col-8">	
@@ -46,12 +43,12 @@
 					<div class="panel bot-10 open">
 						<div class="panel-heading">
 							<h2 class="panel-title">
+								<div class="pull-right">
+									<i class="icon-pencil edit"></i>
+									<span class="badge badge-warning">1</span>
+								</div>
 								<i class="icon-medkit"></i> Encounter #2507
 							</h2>
-						</div>
-
-						<div class="alert alert-warning alert-flush">
-							<i class="icon-warning-sign"></i> <strong>Code Check</strong> The Diagnosis Code(s) submitted with the Procedure Code (98941) does not meet or may not fully support Medical Necessity. 
 						</div>
 
 						<div class="list-group-flush pad claims">
@@ -92,41 +89,50 @@
 		</section>
 
 		<aside class="col-4">
-			<div class="panel bot-10 open">
+			<div class="panel panel-kareo bot-10 open">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<i class="icon-pencil edit pull-right"></i>
+						<i class="icon-warning-sign"></i> Errors and Warnings
+					</h3>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item text-danger"><strong>Payer Address</strong> is missing</li>
+					<li class="list-group-item text-danger"><strong>Rendering location</strong> is missing</li>
+					<li class="list-group-item text-warning"><strong>Code Check</strong> The Diagnosis Code(s) submitted with the Procedure Code (98941) does not meet or may not fully support Medical Necessity.</li>
+				</ul>
+			</div>
+
+			<div class="panel bot-10">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<div class="pull-right">
+							<i class="icon-pencil edit"></i>
+							<span class="badge badge-error">1</span>
+						</div>
 						<i class="icon-building"></i> Aetna Health
 					</h3>
 				</div>
-				<div class="list-group-flush">
-					<div class="alert alert-danger alert-flush">
-						<i class="icon-exclamation-sign"></i> <strong>Payer Address</strong> is missing
-					</div>
-					<div class="pad pad-left">
-						<span class="text-danger">Address</span>
-						<br />EDI Payer # <strong>234234 (Capario)</strong>
-						<br />Group # <strong>AD90543</strong>
-					</div>
+				<div class="list-group-flush pad pad-left">
+					<span class="text-danger">Address</span>
+					<br />EDI Payer # <strong>234234 (Capario)</strong>
+					<br />Group # <strong>AD90543</strong>
 				</div>
 			</div>
 
-			<div class="panel bot-10 open">
+			<div class="panel bot-10">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<i class="icon-pencil edit pull-right"></i>
+						<div class="pull-right">
+							<i class="icon-pencil edit"></i>
+							<span class="badge badge-error">1</span>
+						</div>
 						<i class="icon-home"></i> Davenport Medical Clinic
 					</h3>
 				</div>
-				<div class="list-group-flush">
-					<div class="alert alert-danger alert-flush">
-						<i class="icon-exclamation-sign"></i> <strong>Rendering location</strong> is missing
-					</div>
-					<div class="pad pad-left">
-						<span class="text-danger">Rendering Location</span>
-						<br />Group NPI <strong>199457851</strong>
-						<br />EIN <strong>45-584562</strong>
-					</div>
+				<div class="list-group-flush pad pad-left">
+					<span class="text-danger">Rendering Location</span>
+					<br />Group NPI <strong>199457851</strong>
+					<br />EIN <strong>45-584562</strong>
 				</div>
 			</div>
 

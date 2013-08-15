@@ -263,7 +263,6 @@ $(document).ready(function() {
 		stamp.show().addClass('animated bounceIn').delay(700).queue(function(nxt) {
 			patient.addClass('animated fadeOutLeft');
 			$('#currentcount').html(parseInt($('#currentcount').html()) - 1);	// -1 current counter based on action
-			if (id=='approve') $('#nextcount').html(parseInt($('#nextcount').html()) + 1);			// +1 next counter based on action
 			nxt();
 		}).delay(300).queue(function(nxt) {
 			patient.removeClass('current').parent().next().children().addClass('animated fadeInRight current');

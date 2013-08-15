@@ -28,7 +28,7 @@
 						<i class="icon-refresh"></i> Resubmitted
 					</div>
 
-					<div class="panel bot-10 open">
+					<div class="panel bot-10">
 						<div class="panel-heading">
 							<h2 class="panel-title">
 								<i class="icon-pencil edit pull-right"></i>
@@ -60,7 +60,7 @@
 								<i class="icon-warning-sign"></i> <strong>15 days left</strong> until estimated filing deadline
 							</div>	
 						</div>
-						
+
 						<div class="list-group-flush controls">
 							<div class="row">
 								<div class="col-12 pad">
@@ -203,7 +203,6 @@
 		<aside class="col-4">
 			<div class="panel bot-10 open">
 				<div class="panel-heading">
-					<span id="currentcount" class="badge pull-right">120</span>
 					<h3 class="panel-title"><i class="icon-exclamation-sign"></i> CO-140</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
