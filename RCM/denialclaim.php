@@ -37,12 +37,20 @@
 						</div>
 						<div class="list-group-flush pad pad-left row">
 							<div class="col-6">
-								DOB <strong>{{prettydate(patient.dob)}}</strong>
-								<br />SSN <strong>{{patient.ssn}}</strong>
+								<dl class="dl-horizontal">
+									<dt>DOB</dt>
+									<dd>{{prettydate(patient.dob)}}</dd>
+									<dt>SSN</dt>
+									<dd>{{patient.ssn}}</dd>
+								</dl>
 							</div>
 							<div class="col-6">
-								Policy # <strong>{{patient.policy}}</strong>
-								<br />Group # <strong>{{patient.group}}</strong>
+								<dl class="dl-horizontal">
+									<dt>Policy #</dt>
+									<dd>{{patient.policy}}</dd>
+									<dt>Group #</dt>
+									<dd>{{patient.group}}</dd>
+								</dl>
 							</div>
 						</div>
 					</div>
@@ -53,12 +61,6 @@
 								<i class="icon-pencil edit pull-right"></i>
 								<i class="icon-medkit"></i> Encounter #2507
 							</h2>
-						</div>
-
-						<div class="list-group-flush">
-							<div class="alert alert-warning alert-flush">
-								<i class="icon-warning-sign"></i> <strong>15 days left</strong> until estimated filing deadline
-							</div>	
 						</div>
 
 						<div class="list-group-flush controls">
@@ -201,7 +203,18 @@
 
 		<!-- <aside class="col-4" data-spy="affix" data-offset-top="90"> -->
 		<aside class="col-4">
-			<div class="panel bot-10 open">
+			<div class="panel panel-kareo bot-10 open">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="icon-bullseye"></i> HUD
+					</h3>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item text-warning"><strong>15 days left</strong> until estimated filing deadline</li>
+				</ul>
+			</div>
+
+			<div class="panel bot-10">
 				<div class="panel-heading">
 					<h3 class="panel-title"><i class="icon-exclamation-sign"></i> CO-140</h3>
 				</div>
@@ -230,8 +243,12 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					Group NPI <strong>199457851</strong>
-					<br />EIN <strong>45-584562</strong>
+					<dl class="dl-horizontal">
+						<dt>Group NPI </dt>
+						<dd>199457851</dd>
+						<dt>EIN</dt>
+						<dd>45-584562</dd>
+					</dl>
 				</div>
 			</div>
 
@@ -243,7 +260,10 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					NPI <strong>123456789</strong>
+					<dl class="dl-horizontal">
+						<dt>NPI</dt>
+						<dd>123456789</dd>
+					</dl>
 				</div>
 			</div>
 		</aside>

@@ -83,7 +83,7 @@
 
                         <? if ($id == 'denials') { ?>
                         
-                        <ul class="nav nav-pills col-8">
+                        <ul class="nav nav-pills col-7">
                             <li><a href="#">Rejections</a></li>
                             <li class="active"><a href="denials.php">Denials <span id="currentcount" class="badge">342</span></a></li>
                             <li><a href="#">No Responses</a></li>
@@ -92,15 +92,16 @@
                         
                         <? } elseif ($id == 'encounters') { ?>
 
-                        <ul class="nav nav-pills col-7 col-offset-1">
+                        <ul class="nav nav-pills col-6 col-offset-1">
                             <li class="active"><a href="encounters.php">Draft <span id="currentcount" class="badge">109</span></a></li>
                             <li><a href="#">Approved</span></a></li>
                         </ul>
 
                         <? } ?>
 
-                        <ul class="nav nav-pills col-1">
+                        <ul class="nav nav-pills col-2">
                             <li class="pull-right"><a href="#" class="dropdown-toggle"><i class="icon-inbox"></i></a></li>
+                            <li class="pull-right"><a href="#"><i class="icon-print"></i></a></li>
                         </ul>
                     </div>  <!-- /.row -->
                 </div>

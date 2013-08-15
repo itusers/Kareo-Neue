@@ -55,6 +55,8 @@
 		
 		<section id="overview" class="col-9">
 			
+			<!-- <div class="descriptor pad">Claim denials grouped by <strong>remark codes</strong> (subgrouped by insurance), sorted by <strong>dollar amount</strong> across <strong>all your practices</strong></div> -->
+
 			<div class="panel" ng-repeat="remark in remarks">
 				<!-- Default panel contents -->
 				<div class="panel-heading">

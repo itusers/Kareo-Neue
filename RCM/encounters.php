@@ -21,7 +21,7 @@
 						<br /><span class="val">Jason Leu</span>
 					</div>
 
-					<div class="panel bot-10 open">
+					<div class="panel bot-10">
 						<div class="panel-heading">
 							<h2 class="panel-title">
 								<i class="icon-pencil edit pull-right"></i>
@@ -30,12 +30,20 @@
 						</div>
 						<div class="list-group-flush pad pad-left row">
 							<div class="col-6">
-								DOB <strong>{{prettydate(patient.dob)}}</strong>
-								<br />Address <strong>{{patient.address}}</strong>
+								<dl class="dl-horizontal">
+									<dt>DOB</dt>
+									<dd>{{prettydate(patient.dob)}}</dd>
+									<dt>Address</dt>
+									<dd>{{patient.address}}</dd>
+								</dl>
 							</div>
 							<div class="col-6">
-								Policy # <strong>{{patient.policy}}</strong>
-								<br />Group # <strong>{{patient.group}}</strong>
+								<dl class="dl-horizontal">
+									<dt>Policy #</dt>
+									<dd>{{patient.policy}}</dd>
+									<dt>Group #</dt>
+									<dd>{{patient.group}}</dd>
+								</dl>
 							</div>
 						</div>
 					</div>
@@ -92,7 +100,7 @@
 			<div class="panel panel-kareo bot-10 open">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<i class="icon-warning-sign"></i> Errors and Warnings
+						<i class="icon-bullseye"></i> HUD
 					</h3>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -113,9 +121,14 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					<span class="text-danger">Address</span>
-					<br />EDI Payer # <strong>234234 (Capario)</strong>
-					<br />Group # <strong>AD90543</strong>
+					<dl class="dl-horizontal">
+						<dt class="text-danger">Address</dt>
+						<dd class="text-danger"><em>(missing)</em></dd>
+						<dt>EDI Payer #</dt>
+						<dd>234234 (Capario)</dd>
+						<dt>Group #</dt>
+						<dd>AD90543</dd>
+					</dl>
 				</div>
 			</div>
 
@@ -130,9 +143,14 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					<span class="text-danger">Rendering Location</span>
-					<br />Group NPI <strong>199457851</strong>
-					<br />EIN <strong>45-584562</strong>
+					<dl class="dl-horizontal">
+						<dt class="text-danger">Location</dt>
+						<dd class="text-danger"><em>(missing)</em></dd>
+						<dt>Group NPI </dt>
+						<dd>199457851</dd>
+						<dt>EIN</dt>
+						<dd>45-584562</dd>
+					</dl>
 				</div>
 			</div>
 
@@ -144,7 +162,10 @@
 					</h3>
 				</div>
 				<div class="list-group-flush pad pad-left">
-					NPI <strong>123456789</strong>
+					<dl class="dl-horizontal">
+						<dt>NPI</dt>
+						<dd>123456789</dd>
+					</dl>
 				</div>
 			</div>
 		</aside>
